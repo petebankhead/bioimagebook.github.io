@@ -53,12 +53,14 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Beyond this book" href="../../appendices/next_steps/next_steps.html" />
     <link rel="prev" title="Noise" href="../3-formation_noise/formation_noise.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
     
+<script defer data-domain="bioimagebook.github.io" src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -926,13 +928,13 @@ Also, because single pixels are recorded separately, the image can (potentially)
 Images usually contain thousands to millions of pixels, and so only a tiny fraction of the time required to record an image is spent detecting photons for any one pixel in a LSCM image – unlike in the widefield case, where photons can be detected for all pixels over the entire image acquisition time. This can cause LSCM image acquisition to be comparatively slow, noisy (in terms of few detected photons) or both.
 Spatial information is therefore gained at a cost in noise and/or temporal resolution.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3ad8c8f0-dd7c-46c7-bf77-a061ecc1f2fa" name="934d9761-8b2f-4e59-83d8-37ff4ce8ddc1" type="radio">
-</input><label class="sd-tab-label" for="3ad8c8f0-dd7c-46c7-bf77-a061ecc1f2fa">
+<input checked="checked" id="b22986cd-95cb-4608-bd07-5b79b5296507" name="645fcf78-2518-47ec-8e45-b23324040734" type="radio">
+</input><label class="sd-tab-label" for="b22986cd-95cb-4608-bd07-5b79b5296507">
 Question</label><div class="sd-tab-content docutils">
 <p>Why is it often recommended that the pinhole in LSCM be set to have the same size as one Airy disk? And why is it sometimes better not to strictly follow this recommendation?</p>
 </div>
-<input id="4c3dcbfb-5351-4157-bbd1-17bfd08da62f" name="934d9761-8b2f-4e59-83d8-37ff4ce8ddc1" type="radio">
-</input><label class="sd-tab-label" for="4c3dcbfb-5351-4157-bbd1-17bfd08da62f">
+<input id="75c3e2d9-002e-4ef6-9ec6-5f8d30a311f7" name="645fcf78-2518-47ec-8e45-b23324040734" type="radio">
+</input><label class="sd-tab-label" for="75c3e2d9-002e-4ef6-9ec6-5f8d30a311f7">
 Answer</label><div class="sd-tab-content docutils">
 <p>As described in <a class="reference internal" href="../2-formation_spatial/formation_spatial.html#chap-formation-spatial"><span class="std std-ref">Blur &amp; the PSF</span></a>, the vast majority of the light from the in-focus plane falls within the Airy disk.
 Using a pinhole smaller than this can result in so little light being detected that the image becomes too noisy to be useful.
@@ -1137,14 +1139,14 @@ See <a class="reference internal" href="#fig-ccd"><span class="std std-numref">F
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c973a5b4-7822-43a0-8487-ec67a4d1404c" name="80915947-9a79-4ba4-a08d-f233b61c65b4" type="radio">
-</input><label class="sd-tab-label" for="c973a5b4-7822-43a0-8487-ec67a4d1404c">
+<input checked="checked" id="31d12f65-8745-4b18-a886-693b10c70d51" name="13417a5b-4fce-492e-bab9-1f9c98468acf" type="radio">
+</input><label class="sd-tab-label" for="31d12f65-8745-4b18-a886-693b10c70d51">
 Question</label><div class="sd-tab-content docutils">
 <p>From a practical point of view, an EMCCD is rather like having a CCD with no read noise, but with half the QE.
 Under what circumstances (i.e. high or low numbers of photons) is an EMCCD preferable to a CCD?</p>
 </div>
-<input id="97bbc864-b6ef-4c0e-bf5b-2c46e68e267e" name="80915947-9a79-4ba4-a08d-f233b61c65b4" type="radio">
-</input><label class="sd-tab-label" for="97bbc864-b6ef-4c0e-bf5b-2c46e68e267e">
+<input id="2d6709fb-d2b4-46a5-a0d1-0b9590cfdd05" name="13417a5b-4fce-492e-bab9-1f9c98468acf" type="radio">
+</input><label class="sd-tab-label" for="2d6709fb-d2b4-46a5-a0d1-0b9590cfdd05">
 Answer</label><div class="sd-tab-content docutils">
 <p>The gain register of EMCCDs offers benefits primarily when few photons are available (i.e. when read-noise is the main problem, such as in SDCM).
 CCDs are preferable when many photons are available (e.g. in widefield).</p>
@@ -1158,13 +1160,13 @@ The read noise of 10 is comparatively insignificant, and there is nothing to gai
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cbbf1adc-e598-4ad7-99c0-5b34d667bc56" name="0acba74e-4c94-4023-8f16-9f8ac2af4527" type="radio">
-</input><label class="sd-tab-label" for="cbbf1adc-e598-4ad7-99c0-5b34d667bc56">
+<input checked="checked" id="1bd176ba-166e-4c08-bdf0-8667d355da6d" name="1aaefdd1-a464-4641-9f4f-5d4857509544" type="radio">
+</input><label class="sd-tab-label" for="1bd176ba-166e-4c08-bdf0-8667d355da6d">
 Question</label><div class="sd-tab-content docutils">
 <p>Based upon the above descriptions, which detectors seem most appropriate (generally!) for (a) widefield microscopy, (b) SDCM and (c) LSCM?</p>
 </div>
-<input id="ae1dcf10-faa2-48db-ae5b-50230043ebc1" name="0acba74e-4c94-4023-8f16-9f8ac2af4527" type="radio">
-</input><label class="sd-tab-label" for="ae1dcf10-faa2-48db-ae5b-50230043ebc1">
+<input id="c0b3a53e-7d2e-428f-994a-44dbad7ac5cd" name="1aaefdd1-a464-4641-9f4f-5d4857509544" type="radio">
+</input><label class="sd-tab-label" for="c0b3a53e-7d2e-428f-994a-44dbad7ac5cd">
 Answer</label><div class="sd-tab-content docutils">
 <p>The following are reasonable rules of thumb:</p>
 <ul class="simple">
@@ -1177,16 +1179,16 @@ This is because SDCM usually gives lower photon counts (certainly lower than in 
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ddbcf426-447c-421a-95d1-cc3d6d246684" name="5f8284f2-f265-4ec1-b57c-749b46505cd0" type="radio">
-</input><label class="sd-tab-label" for="ddbcf426-447c-421a-95d1-cc3d6d246684">
+<input checked="checked" id="2d3cdf54-234a-461a-9fb2-caf261a4cc54" name="8b423ebb-9fc1-4580-bd90-cfdce64f2cd3" type="radio">
+</input><label class="sd-tab-label" for="2d3cdf54-234a-461a-9fb2-caf261a4cc54">
 Question</label><div class="sd-tab-content docutils">
 <p>Previously we explored how CCDs can use 2×2 binning to combine the electrons corresponding to multiple pixels together into a single pixel, which is then ‘less noisy’.
 A similar effect can be achieved by just acquiring an image without binning and applying a 2×2 filter, in which all the coefficients have values of one.
 Both techniques result in images that have roughly four times as many photons contributing to each pixel, and thus a better SNR.</p>
 <p>Think of one major advantage and one disadvantage of using filtering <em>after</em> acquisition, rather than binning <em>during</em> acquisition.</p>
 </div>
-<input id="a5ba9a03-0560-459a-979b-acedee37b408" name="5f8284f2-f265-4ec1-b57c-749b46505cd0" type="radio">
-</input><label class="sd-tab-label" for="a5ba9a03-0560-459a-979b-acedee37b408">
+<input id="eff9de0f-cc57-4d1b-bf99-86695da1fe42" name="8b423ebb-9fc1-4580-bd90-cfdce64f2cd3" type="radio">
+</input><label class="sd-tab-label" for="eff9de0f-cc57-4d1b-bf99-86695da1fe42">
 Answer</label><div class="sd-tab-content docutils">
 <p>A 2×2 binned image contains 1/4 the number of pixels of the original image.
 This represents a considerable loss of spatial information, and you would get a different result if you were to start binning at the first or second row or column, since different pixels would be combined in each case.
