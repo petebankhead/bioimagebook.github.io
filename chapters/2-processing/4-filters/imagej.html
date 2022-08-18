@@ -838,13 +838,13 @@ However <a class="reference internal" href="../../appendices/macros/macro_dog.ht
 If you <span class="guilabel">Normalize Kernel</span> is selected, then the coefficients are scaled so that they add to 1, by dividing by the sum of all the coefficients – unless the sum is 0, in which case requesting normalizion does nothing.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-convolve-custom.png"><img alt="../../../_images/imagej-filters-convolve-custom.png" class="align-center" src="../../../_images/imagej-filters-convolve-custom.png" style="width: 80%;" /></a>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c379bfc4-c665-4494-86b3-201425b90ca6" name="1b8973ec-cba9-4fae-8452-b2b16c0127bc" type="radio">
-</input><label class="sd-tab-label" for="c379bfc4-c665-4494-86b3-201425b90ca6">
+<input checked="checked" id="eb100816-48dc-4a2d-9f8f-f377c19b7ca3" name="eb9cc1cf-13a9-4610-b3e5-beb9947cc1e0" type="radio">
+</input><label class="sd-tab-label" for="eb100816-48dc-4a2d-9f8f-f377c19b7ca3">
 Question</label><div class="sd-tab-content docutils">
 <p>When defining an <em>n_×_n</em> filter kernel with <span class="menuselection">Convolve…</span>, ImageJ insists that <strong>n</strong> is an odd number. Why?</p>
 </div>
-<input id="f7750ad4-8c28-47c4-ab70-04b9e8159ca2" name="1b8973ec-cba9-4fae-8452-b2b16c0127bc" type="radio">
-</input><label class="sd-tab-label" for="f7750ad4-8c28-47c4-ab70-04b9e8159ca2">
+<input id="c14ef245-2d83-41db-a704-4e60e14cc808" name="eb9cc1cf-13a9-4610-b3e5-beb9947cc1e0" type="radio">
+</input><label class="sd-tab-label" for="c14ef245-2d83-41db-a704-4e60e14cc808">
 Answer</label><div class="sd-tab-content docutils">
 <p>If <em>n</em> is an odd number, the filter has a clear central pixel.
 This makes it possible to center the filter kernel on a pixel on the image.</p>
@@ -855,8 +855,8 @@ This makes it possible to center the filter kernel on a pixel on the image.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-convolve-1.png"><img alt="../../../_images/imagej-filters-convolve-1.png" class="align-center" src="../../../_images/imagej-filters-convolve-1.png" style="width: 80%;" /></a>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="90f02506-50c2-4b78-afa8-915e31ea6b72" name="b9a98d4f-cb2e-4530-a8a5-0b0cc6fdce0a" type="radio">
-</input><label class="sd-tab-label" for="90f02506-50c2-4b78-afa8-915e31ea6b72">
+<input checked="checked" id="4de47521-518d-47ca-a3b9-a921165a77bc" name="840bbccb-2f8a-44b4-b433-395baa8fa628" type="radio">
+</input><label class="sd-tab-label" for="4de47521-518d-47ca-a3b9-a921165a77bc">
 Question</label><div class="sd-tab-content docutils">
 <p>Predict what happens when you convolve an image using a filter that consists of a single coefficient with a value -1 in the following cases:</p>
 <ol class="simple">
@@ -865,8 +865,8 @@ Question</label><div class="sd-tab-content docutils">
 <li><p>You have an 8-bit image, <span class="guilabel">Normalize Kernel</span> is unchecked</p></li>
 </ol>
 </div>
-<input id="b5ffeaf2-64d4-4d25-8dff-3a605904f5b6" name="b9a98d4f-cb2e-4530-a8a5-0b0cc6fdce0a" type="radio">
-</input><label class="sd-tab-label" for="b5ffeaf2-64d4-4d25-8dff-3a605904f5b6">
+<input id="67d0c833-6630-47ae-b885-27cdd81e309d" name="840bbccb-2f8a-44b4-b433-395baa8fa628" type="radio">
+</input><label class="sd-tab-label" for="67d0c833-6630-47ae-b885-27cdd81e309d">
 Answer</label><div class="sd-tab-content docutils">
 <p>The results of convolving with a single -1 coefficient in different circumstances:</p>
 <ol class="simple">
@@ -877,8 +877,8 @@ Answer</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b5cb96c3-8391-477b-b289-85060d868cc0" name="8b4084a5-11a3-4b59-b714-a379a4226f4a" type="radio">
-</input><label class="sd-tab-label" for="b5cb96c3-8391-477b-b289-85060d868cc0">
+<input checked="checked" id="962edaa8-a3b9-4bae-be8c-b2ccab60f36b" name="d67c8e4a-3cf2-4e97-8b10-212001d214e7" type="radio">
+</input><label class="sd-tab-label" for="962edaa8-a3b9-4bae-be8c-b2ccab60f36b">
 Practical</label><div class="sd-tab-content docutils">
 <p>Using any image, work out which of the methods for dealing with boundaries shown in <a class="reference internal" href="filters.html#fig-filter-boundaries"><span class="std std-numref">Fig. 84</span></a> is used by ImageJ’s <span class="menuselection">Convolve…</span> command.</p>
 <p><strong>Note:</strong> This requires a bit of creativity.
@@ -886,8 +886,8 @@ It will certainly help to use an image with some variation at the image boundary
 I used <span class="menuselection">File ‣ Open Samples ‣ Blobs</span>.</p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="0ac0dde7-150a-44f1-a605-ba6a68ceadbc" name="8b4084a5-11a3-4b59-b714-a379a4226f4a" type="radio">
-</input><label class="sd-tab-label" for="0ac0dde7-150a-44f1-a605-ba6a68ceadbc">
+<input id="26879d19-04ea-489e-80ce-0f4af6dbe2f4" name="d67c8e4a-3cf2-4e97-8b10-212001d214e7" type="radio">
+</input><label class="sd-tab-label" for="26879d19-04ea-489e-80ce-0f4af6dbe2f4">
 Solution</label><div class="sd-tab-content docutils">
 <p>Replication of boundary pixels is the default method used by <span class="menuselection">Process ‣ Filters ‣ Convolve…</span> in ImageJ (although other filtering plugins by different authors might use different methods).</p>
 <p>My approach to test this involved using <span class="menuselection">Convolve…</span> with a filter that consisting of a 1 followed by a lot of zeros (e.g. <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0...</span></code>).
@@ -902,8 +902,8 @@ This basically shifts the image to the right, bringing whatever is outside the i
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1d029743-28f4-4188-98c9-9191e6ddb7eb" name="fe6f668c-409c-4892-a5ae-87095c30462d" type="radio">
-</input><label class="sd-tab-label" for="1d029743-28f4-4188-98c9-9191e6ddb7eb">
+<input checked="checked" id="b8b3b059-22f8-4a5a-abef-5cd691f44bda" name="9ec8a39d-9940-460d-8293-be34cb5fba5a" type="radio">
+</input><label class="sd-tab-label" for="b8b3b059-22f8-4a5a-abef-5cd691f44bda">
 Practical</label><div class="sd-tab-content docutils">
 <p>Practice using the commands we’ve met so far by determining the <strong>gradient magnitude</strong> of an image, as described <a class="reference internal" href="filters.html#sec-filters-gradient"><span class="std std-ref">here</span></a>.</p>
 <p>You will need to use</p>
@@ -918,8 +918,8 @@ Practical</label><div class="sd-tab-content docutils">
 <em>(Be sure to pay attention to the bit-depth!)</em></p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="87d98f21-54f0-4c57-b6fd-0421990c9377" name="fe6f668c-409c-4892-a5ae-87095c30462d" type="radio">
-</input><label class="sd-tab-label" for="87d98f21-54f0-4c57-b6fd-0421990c9377">
+<input id="5d02b16e-ac91-453e-a197-a37d1e72a99a" name="9ec8a39d-9940-460d-8293-be34cb5fba5a" type="radio">
+</input><label class="sd-tab-label" for="5d02b16e-ac91-453e-a197-a37d1e72a99a">
 Solution</label><div class="sd-tab-content docutils">
 <p>The process to calculate the gradient magnitude is:</p>
 <ol class="simple">
@@ -959,8 +959,8 @@ Solution</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4809720a-8bcd-4819-bc7c-8424322ba035" name="adf84b6b-b50c-43f4-9bd0-a5d42be2781f" type="radio">
-</input><label class="sd-tab-label" for="4809720a-8bcd-4819-bc7c-8424322ba035">
+<input checked="checked" id="4b8f8465-43be-457f-86ef-7e5eb40ee2f4" name="548fd066-b35b-40f2-8537-8873d896a5b4" type="radio">
+</input><label class="sd-tab-label" for="4b8f8465-43be-457f-86ef-7e5eb40ee2f4">
 Practical</label><div class="sd-tab-content docutils">
 <p>ImageJ has a LUT called <strong>edges</strong> under <span class="menuselection">Image ‣ Lookup Tables ‣ Edges</span>.
 Applied to <span class="menuselection">File ‣ Open samples ‣ Blobs (25K)</span>, it does a rather good job of highlighting edges – without actually changing the pixels at all.</p>
@@ -968,8 +968,8 @@ Applied to <span class="menuselection">File ‣ Open samples ‣ Blobs (25K)</sp
 Does it apply a filter?</p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="b1259983-9c4d-4ba1-9209-867607e82697" name="adf84b6b-b50c-43f4-9bd0-a5d42be2781f" type="radio">
-</input><label class="sd-tab-label" for="b1259983-9c4d-4ba1-9209-867607e82697">
+<input id="aeb72341-4190-4c76-856c-6a7e21815898" name="548fd066-b35b-40f2-8537-8873d896a5b4" type="radio">
+</input><label class="sd-tab-label" for="aeb72341-4190-4c76-856c-6a7e21815898">
 Solution</label><div class="sd-tab-content docutils">
 <p>The <span class="menuselection">edges</span> LUT shows most low and high pixel values as black – and uses lighter shades of gray only for a small range of values in between (see <span class="menuselection">Image ‣ Color ‣ Edit LUT…</span>).
 In any image with a good separation of background and foreground pixels, but which still has a somewhat smooth transition between them, this means everything but the edges can appear black.</p>
