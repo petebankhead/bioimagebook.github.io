@@ -833,14 +833,14 @@ Optimizing the display for a single slice does not necessarily mean the rest of 
 You can also specify the percentage of pixels that should be saturated (clipped) <em>for display</em>, i.e. those that should be shown with the first or last colors in the LUT.
 So long as <span class="guilabel">Normalize</span> and <span class="guilabel">Equalize histogram</span> are not selected, the pixel values shouldn’t be changed.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c0baf654-4177-4022-b454-48222210bb9d" name="91bb886a-93b2-47b9-90fa-a50300557b04" type="radio">
-</input><label class="sd-tab-label" for="c0baf654-4177-4022-b454-48222210bb9d">
+<input checked="checked" id="ea9db9b6-9dc6-4256-9786-77d3d1fb2474" name="e55d8f13-2c6a-4d39-97b6-fcc0f551b95d" type="radio">
+</input><label class="sd-tab-label" for="ea9db9b6-9dc6-4256-9786-77d3d1fb2474">
 Question</label><div class="sd-tab-content docutils">
 <p>By default, the percentage of saturated pixels in <span class="menuselection">Enhance Contrast…</span> is set to 0.4.
 Why might this be chosen instead of 0?</p>
 </div>
-<input id="28a53e4d-a24e-459f-be00-5fd5f9f11d45" name="91bb886a-93b2-47b9-90fa-a50300557b04" type="radio">
-</input><label class="sd-tab-label" for="28a53e4d-a24e-459f-be00-5fd5f9f11d45">
+<input id="ae7d997e-ce67-401b-adea-f8197d35b78c" name="e55d8f13-2c6a-4d39-97b6-fcc0f551b95d" type="radio">
+</input><label class="sd-tab-label" for="ae7d997e-ce67-401b-adea-f8197d35b78c">
 Answer</label><div class="sd-tab-content docutils">
 <p>If the percentage of saturated pixels is 0, then the minimum and maximum pixel values throughout the image will be given the first and last LUT colors respectively, with all other colors devoted to values in between.
 This is sensitive to outliers, and often results in images that have poor contrast.
@@ -888,8 +888,8 @@ Elsewhere (e.g. <span class="menuselection">Gaussian Blur 3D…</span>) the unit
 <p>When thresholding an image with more than 2 dimensions using the <span class="menuselection">Threshold…</span> command, it is necessary to choose whether the threshold should be determined from the histogram of the entire stack, or from the currently-visible 2D slice only.
 If the latter, you will also be asked whether the same threshold should be used for every slice, or if it should be calculated anew for each slice based upon the slice histogram. In some circumstances, these choices can have a very large impact upon the result.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="807315d2-89ef-443c-b595-948c1c9ad2f4" name="3d73035d-6189-4c72-a74e-78a819ca5b98" type="radio">
-</input><label class="sd-tab-label" for="807315d2-89ef-443c-b595-948c1c9ad2f4">
+<input checked="checked" id="476522ea-46c7-4303-8490-6b9f3de04161" name="9ad0e85d-d10c-4f17-857d-a1671dfcc81b" type="radio">
+</input><label class="sd-tab-label" for="476522ea-46c7-4303-8490-6b9f3de04161">
 Question</label><div class="sd-tab-content docutils">
 <p>When you threshold a stack, you have an option to choose <span class="guilabel">Stack Histogram</span>. Then, when you choose <span class="guilabel">Apply</span> you are asked if you want to <span class="guilabel">Calculate Threshold for Each Image</span>.
 What difference do you expect these two options to make, and what combinations would you use for:</p>
@@ -902,8 +902,8 @@ What difference do you expect these two options to make, and what combinations w
 You will have to split the channels for this because ImageJ currently refuses to threshold multichannel images with extra dimensions (which helps avoid some confusion).
 <span class="guilabel">Dark Background</span> should always be selected here.</p>
 </div>
-<input id="b45e7c38-7a27-4c7d-9ec3-a682d84a4ce0" name="3d73035d-6189-4c72-a74e-78a819ca5b98" type="radio">
-</input><label class="sd-tab-label" for="b45e7c38-7a27-4c7d-9ec3-a682d84a4ce0">
+<input id="a6881aa6-aa43-4b8d-9d51-0d8b4edb0b1a" name="9ad0e85d-d10c-4f17-857d-a1671dfcc81b" type="radio">
+</input><label class="sd-tab-label" for="a6881aa6-aa43-4b8d-9d51-0d8b4edb0b1a">
 Answer</label><div class="sd-tab-content docutils">
 <p>If <span class="guilabel">Stack Histogram</span> is checked, the thresholds are computed from a histogram of all the pixels in the entire image stack; otherwise, the histogram of only the currently-displayed image slice is used.</p>
 <p>BUT! If <span class="guilabel">Calculate Threshold for Each Image</span> is chosen, then this is ignored: the threshold is always determined by the selected automatic method using the histogram of the corresponding slice only.</p>
@@ -946,8 +946,8 @@ However, if single measurements should be made for individual objects that exten
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="78604a30-ecb8-4c5a-b5bb-86657a185f34" name="df416fab-f057-4fe5-a8ce-8a1a4b07934b" type="radio">
-</input><label class="sd-tab-label" for="78604a30-ecb8-4c5a-b5bb-86657a185f34">
+<input checked="checked" id="4b4121f2-f723-447d-9ca7-529d1440c082" name="e2a2f0b2-616c-4b98-b6d3-b1bfe8752f87" type="radio">
+</input><label class="sd-tab-label" for="4b4121f2-f723-447d-9ca7-529d1440c082">
 Practical</label><div class="sd-tab-content docutils">
 <p>Suppose you have a cell, nucleus or some other large 3D structure in a <strong>z</strong>-stack, and you want to draw the smallest 2D ROI that completely contains it on every slice.
 An example is shown below for the green structure in the <span class="menuselection">Confocal Series</span> sample image.</p>
@@ -959,8 +959,8 @@ An example is shown below for the green structure in the <span class="menuselect
 </div>
 </figure>
 </div>
-<input id="812cdc02-4afa-41da-b11a-cf048ae50be6" name="df416fab-f057-4fe5-a8ce-8a1a4b07934b" type="radio">
-</input><label class="sd-tab-label" for="812cdc02-4afa-41da-b11a-cf048ae50be6">
+<input id="611f63c6-318b-4370-81e8-d9407aa054fa" name="e2a2f0b2-616c-4b98-b6d3-b1bfe8752f87" type="radio">
+</input><label class="sd-tab-label" for="611f63c6-318b-4370-81e8-d9407aa054fa">
 Solution</label><div class="sd-tab-content docutils">
 <p>My strategy would be to create a z-projection (max intensity) and then draw the ROI on this – or, preferably, create the ROI by thresholding using <span class="menuselection">Image ‣ Adjust ‣ Threshold</span> and the <span class="guilabel">Wand</span> tool.
 This ROI can then be transferred over to the original stack, either via the ROI Manager or <span class="menuselection">Edit ‣ Selection ‣ Restore Selection</span>.</p>
@@ -976,14 +976,14 @@ Rather, under <span class="menuselection">Analyze ‣ Set Measurements…</span>
 Then when you compute the stack histogram (or press <span class="menuselection">Measure</span> for 2D) only above-threshold pixels will be included in the statistics.
 Just be sure to reset <span class="guilabel">Limit to threshold</span> later.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6beb1fea-ab04-4d47-8f0f-0511056dca6f" name="db08febf-6345-4d61-9496-82cc6e46e490" type="radio">
-</input><label class="sd-tab-label" for="6beb1fea-ab04-4d47-8f0f-0511056dca6f">
+<input checked="checked" id="6fae9944-43e1-425f-ada1-4cbdb25fa2f1" name="57c7cf1f-fba3-43ab-8408-be93c6dd1a7d" type="radio">
+</input><label class="sd-tab-label" for="6fae9944-43e1-425f-ada1-4cbdb25fa2f1">
 Question</label><div class="sd-tab-content docutils">
 <p>How can you translate the total number of pixels in an object into its volume, e.g.
 in µm<sup>3</sup>? Give some thought to how accurate your method will be.</p>
 </div>
-<input id="0e654127-17f7-43f7-b6f0-e4419e880f2e" name="db08febf-6345-4d61-9496-82cc6e46e490" type="radio">
-</input><label class="sd-tab-label" for="0e654127-17f7-43f7-b6f0-e4419e880f2e">
+<input id="9d5d81d2-d7bf-4165-acdf-565140a5f295" name="57c7cf1f-fba3-43ab-8408-be93c6dd1a7d" type="radio">
+</input><label class="sd-tab-label" for="9d5d81d2-d7bf-4165-acdf-565140a5f295">
 Answer</label><div class="sd-tab-content docutils">
 <p>You could treat each pixel as a rectangular cuboid, with a volume equal to <em>pixel width_×_pixel height_×_voxel depth</em> (as given in <span class="menuselection">Image ‣ Properties…</span>).
 Then multiply this by the number of pixels within the object.
@@ -1025,7 +1025,7 @@ his not only includes a range of fast filters and commands for segmentation, but
 </dd>
 <dt class="label" id="fn-3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>See See S Bolte and F P Cordelières.
-“A guided tour into subcellular colocalization analysis in light microscopy.” In: Journal of Microscopy <a class="reference external" href="http://224.Pt">224.Pt</a> 3 (Dec. 2006), pp. 213–32.
+“A guided tour into subcellular colocalization analysis in light microscopy.” Journal of Microscopy <a class="reference external" href="http://224.Pt">224.Pt</a> 3 (Dec. 2006), pp. 213–32.
 url: <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/17210054/">https://pubmed.ncbi.nlm.nih.gov/17210054/</a></p>
 </dd>
 </dl>

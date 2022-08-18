@@ -1044,15 +1044,15 @@ A TIFF image could contain uncompressed data, or data compressed using a variety
 To determine if a TIFF image has used lossy compression, more detective work may be needed (e.g. zooming in and hunting for artefacts, comparing pixel statistics with the original data file, or using software to check for metadata).</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="daf64613-4f95-4203-bb67-242ef3143f94" name="e582a1d0-6330-4eb7-be3e-ba65e70a0d06" type="radio">
-</input><label class="sd-tab-label" for="daf64613-4f95-4203-bb67-242ef3143f94">
+<input checked="checked" id="bc1f90c7-d41e-473a-baa5-1ca1e52bd15b" name="28070953-9265-4e02-b358-a68d5ac9db78" type="radio">
+</input><label class="sd-tab-label" for="bc1f90c7-d41e-473a-baa5-1ca1e52bd15b">
 Question</label><div class="sd-tab-content docutils">
 <p>It takes approximately 1 MB to store (1,000,000 bytes) an 8-bit uncompressed image with 1,000,000 pixels.</p>
 <p>How much memory does it take to store a 16-bit image with the same number of pixels?</p>
 <p><em>You can ignore the tiny bit of extra space needed to store any associated metadata.</em></p>
 </div>
-<input id="9b8d5467-8f3b-4fb3-a079-6f9c15feba88" name="e582a1d0-6330-4eb7-be3e-ba65e70a0d06" type="radio">
-</input><label class="sd-tab-label" for="9b8d5467-8f3b-4fb3-a079-6f9c15feba88">
+<input id="1f4c63d6-d2eb-47b6-939f-8f420030ebf3" name="28070953-9265-4e02-b358-a68d5ac9db78" type="radio">
+</input><label class="sd-tab-label" for="1f4c63d6-d2eb-47b6-939f-8f420030ebf3">
 Answer</label><div class="sd-tab-content docutils">
 <p>2 MB.</p>
 <p>8 bits corresponds to 1 byte, so 16 bits correspond to 2 bytes.
@@ -1060,16 +1060,16 @@ We multiply the number of bytes per pixel by the number of pixels to get the min
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3b968781-b7a2-4de1-b37d-a78f2bad196e" name="79c4dda2-6926-464b-964e-201b52f50b01" type="radio">
-</input><label class="sd-tab-label" for="3b968781-b7a2-4de1-b37d-a78f2bad196e">
+<input checked="checked" id="f1cabff1-f74a-4311-bb03-7b2b00956ca4" name="0ca329cf-1c03-4146-9e9e-f56913a12cd8" type="radio">
+</input><label class="sd-tab-label" for="f1cabff1-f74a-4311-bb03-7b2b00956ca4">
 Question</label><div class="sd-tab-content docutils">
 <p>Suppose you have an original image in TIFF format (no compression).
 First, you save it as JPEG (lossy compression) to reduce the file size, then close it and throw away the TIFF.</p>
 <p>Upon hearing JPEG is bad, you reopen the image and save it as TIFF  once more (no compression), throwing away the JPEG.
 How does your final TIFF image look, and what is its file size?</p>
 </div>
-<input id="b32dc8c8-f548-4767-911d-24d8bbdd073d" name="79c4dda2-6926-464b-964e-201b52f50b01" type="radio">
-</input><label class="sd-tab-label" for="b32dc8c8-f548-4767-911d-24d8bbdd073d">
+<input id="34c61d0a-1c03-4488-864c-b4bd5eb96073" name="0ca329cf-1c03-4146-9e9e-f56913a12cd8" type="radio">
+</input><label class="sd-tab-label" for="34c61d0a-1c03-4488-864c-b4bd5eb96073">
 Answer</label><div class="sd-tab-content docutils">
 <p>The final image will look exactly like the JPEG version, <em>but with the same file size as the original TIFF!</em>
 As such, it has ‘the worst of both worlds’.</p>
