@@ -803,17 +803,17 @@ It’s really just a scattered collection of thoughts for now.</p>
 </div>
 <div class="cell tag_hide-cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%load_ext autoreload
+%autoreload 2
 
-<span class="c1"># Default imports</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../../../&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+# Default imports
+import sys
+sys.path.append(&#39;../../../&#39;)
+from helpers import *
+from matplotlib import pyplot as plt
+from myst_nb import glue
+import numpy as np
+from scipy import ndimage
 </pre></div>
 </div>
 </div>
@@ -833,14 +833,14 @@ Optimizing the display for a single slice does not necessarily mean the rest of 
 You can also specify the percentage of pixels that should be saturated (clipped) <em>for display</em>, i.e. those that should be shown with the first or last colors in the LUT.
 So long as <span class="guilabel">Normalize</span> and <span class="guilabel">Equalize histogram</span> are not selected, the pixel values shouldn’t be changed.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3d4b86a2-d5a7-49b9-b28e-e4785ec2980a" name="d344acd3-8703-4b8b-9968-c34279b1d33b" type="radio">
-</input><label class="sd-tab-label" for="3d4b86a2-d5a7-49b9-b28e-e4785ec2980a">
+<input checked="checked" id="e0e4fefc-421e-4631-afce-96ab94b38c0d" name="e55224a1-2a42-407e-9f2d-da6295a1b305" type="radio">
+</input><label class="sd-tab-label" for="e0e4fefc-421e-4631-afce-96ab94b38c0d">
 Question</label><div class="sd-tab-content docutils">
 <p>By default, the percentage of saturated pixels in <span class="menuselection">Enhance Contrast…</span> is set to 0.4.
 Why might this be chosen instead of 0?</p>
 </div>
-<input id="b69b436a-2fcc-4554-8160-5abb68fffa71" name="d344acd3-8703-4b8b-9968-c34279b1d33b" type="radio">
-</input><label class="sd-tab-label" for="b69b436a-2fcc-4554-8160-5abb68fffa71">
+<input id="6b0b4dcf-0c9c-4151-9257-2c421373eb35" name="e55224a1-2a42-407e-9f2d-da6295a1b305" type="radio">
+</input><label class="sd-tab-label" for="6b0b4dcf-0c9c-4151-9257-2c421373eb35">
 Answer</label><div class="sd-tab-content docutils">
 <p>If the percentage of saturated pixels is 0, then the minimum and maximum pixel values throughout the image will be given the first and last LUT colors respectively, with all other colors devoted to values in between.
 This is sensitive to outliers, and often results in images that have poor contrast.
@@ -888,8 +888,8 @@ Elsewhere (e.g. <span class="menuselection">Gaussian Blur 3D…</span>) the unit
 <p>When thresholding an image with more than 2 dimensions using the <span class="menuselection">Threshold…</span> command, it is necessary to choose whether the threshold should be determined from the histogram of the entire stack, or from the currently-visible 2D slice only.
 If the latter, you will also be asked whether the same threshold should be used for every slice, or if it should be calculated anew for each slice based upon the slice histogram. In some circumstances, these choices can have a very large impact upon the result.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7d459abf-3cff-483c-aab9-b5730ac573ce" name="421d39a9-ca88-4710-bc43-193955bd2ffb" type="radio">
-</input><label class="sd-tab-label" for="7d459abf-3cff-483c-aab9-b5730ac573ce">
+<input checked="checked" id="52e20f41-15ee-4482-b359-75b56226fdf9" name="58b98d3f-26c1-487a-a091-f31d1b531d6b" type="radio">
+</input><label class="sd-tab-label" for="52e20f41-15ee-4482-b359-75b56226fdf9">
 Question</label><div class="sd-tab-content docutils">
 <p>When you threshold a stack, you have an option to choose <span class="guilabel">Stack Histogram</span>. Then, when you choose <span class="guilabel">Apply</span> you are asked if you want to <span class="guilabel">Calculate Threshold for Each Image</span>.
 What difference do you expect these two options to make, and what combinations would you use for:</p>
@@ -902,8 +902,8 @@ What difference do you expect these two options to make, and what combinations w
 You will have to split the channels for this because ImageJ currently refuses to threshold multichannel images with extra dimensions (which helps avoid some confusion).
 <span class="guilabel">Dark Background</span> should always be selected here.</p>
 </div>
-<input id="1cafdcad-9388-4e4a-82d2-c5ec1bcaa665" name="421d39a9-ca88-4710-bc43-193955bd2ffb" type="radio">
-</input><label class="sd-tab-label" for="1cafdcad-9388-4e4a-82d2-c5ec1bcaa665">
+<input id="da67c496-445d-4912-b309-e558546e1621" name="58b98d3f-26c1-487a-a091-f31d1b531d6b" type="radio">
+</input><label class="sd-tab-label" for="da67c496-445d-4912-b309-e558546e1621">
 Answer</label><div class="sd-tab-content docutils">
 <p>If <span class="guilabel">Stack Histogram</span> is checked, the thresholds are computed from a histogram of all the pixels in the entire image stack; otherwise, the histogram of only the currently-displayed image slice is used.</p>
 <p>BUT! If <span class="guilabel">Calculate Threshold for Each Image</span> is chosen, then this is ignored: the threshold is always determined by the selected automatic method using the histogram of the corresponding slice only.</p>
@@ -936,18 +936,18 @@ It will also plot the mean pixel values, but even if you do not particularly wan
 However, if single measurements should be made for individual objects that extend across multiple slices, neither of these options would be enough.</p>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/widest_roi_1.png&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">131</span><span class="p">)</span>
-<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/widest_roi_2.png&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">132</span><span class="p">)</span>
-<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/widest_roi_3.png&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">133</span><span class="p">)</span>
-<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_multidimensional_widest&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(6, 4))
+show_image(&#39;images/widest_roi_1.png&#39;, pos=131)
+show_image(&#39;images/widest_roi_2.png&#39;, pos=132)
+show_image(&#39;images/widest_roi_3.png&#39;, pos=133)
+glue_fig(&#39;fig_multidimensional_widest&#39;, fig)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="26fe53f0-d442-4fc5-9ace-63d187ffe1a0" name="5d441ef7-41d9-4dfd-874e-1d6cce77baef" type="radio">
-</input><label class="sd-tab-label" for="26fe53f0-d442-4fc5-9ace-63d187ffe1a0">
+<input checked="checked" id="82304d63-dd75-4296-899b-5a977c7a3236" name="39ee7aac-5b94-45b6-937d-b054aaa5694b" type="radio">
+</input><label class="sd-tab-label" for="82304d63-dd75-4296-899b-5a977c7a3236">
 Practical</label><div class="sd-tab-content docutils">
 <p>Suppose you have a cell, nucleus or some other large 3D structure in a <strong>z</strong>-stack, and you want to draw the smallest 2D ROI that completely contains it on every slice.
 An example is shown below for the green structure in the <span class="menuselection">Confocal Series</span> sample image.</p>
@@ -959,8 +959,8 @@ An example is shown below for the green structure in the <span class="menuselect
 </div>
 </figure>
 </div>
-<input id="018de4e3-07b7-435f-b514-9e1458051e70" name="5d441ef7-41d9-4dfd-874e-1d6cce77baef" type="radio">
-</input><label class="sd-tab-label" for="018de4e3-07b7-435f-b514-9e1458051e70">
+<input id="f6d5f782-5c0c-492b-93df-d6ace8fe25fa" name="39ee7aac-5b94-45b6-937d-b054aaa5694b" type="radio">
+</input><label class="sd-tab-label" for="f6d5f782-5c0c-492b-93df-d6ace8fe25fa">
 Solution</label><div class="sd-tab-content docutils">
 <p>My strategy would be to create a z-projection (max intensity) and then draw the ROI on this – or, preferably, create the ROI by thresholding using <span class="menuselection">Image ‣ Adjust ‣ Threshold</span> and the <span class="guilabel">Wand</span> tool.
 This ROI can then be transferred over to the original stack, either via the ROI Manager or <span class="menuselection">Edit ‣ Selection ‣ Restore Selection</span>.</p>
@@ -976,14 +976,14 @@ Rather, under <span class="menuselection">Analyze ‣ Set Measurements…</span>
 Then when you compute the stack histogram (or press <span class="menuselection">Measure</span> for 2D) only above-threshold pixels will be included in the statistics.
 Just be sure to reset <span class="guilabel">Limit to threshold</span> later.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="298041c2-196d-4d5d-9718-d934944c22df" name="4f219b65-6fde-4ba4-92ac-234c85dcc960" type="radio">
-</input><label class="sd-tab-label" for="298041c2-196d-4d5d-9718-d934944c22df">
+<input checked="checked" id="e355d861-b8fe-4296-87e9-216ac776ca99" name="36988f6e-12df-45ae-95e0-ff5530f37c46" type="radio">
+</input><label class="sd-tab-label" for="e355d861-b8fe-4296-87e9-216ac776ca99">
 Question</label><div class="sd-tab-content docutils">
 <p>How can you translate the total number of pixels in an object into its volume, e.g.
 in µm<sup>3</sup>? Give some thought to how accurate your method will be.</p>
 </div>
-<input id="c5e53d0b-2faf-4f4a-9076-901ad5b711d0" name="4f219b65-6fde-4ba4-92ac-234c85dcc960" type="radio">
-</input><label class="sd-tab-label" for="c5e53d0b-2faf-4f4a-9076-901ad5b711d0">
+<input id="2b446709-8be6-4231-9a63-9f566713432f" name="36988f6e-12df-45ae-95e0-ff5530f37c46" type="radio">
+</input><label class="sd-tab-label" for="2b446709-8be6-4231-9a63-9f566713432f">
 Answer</label><div class="sd-tab-content docutils">
 <p>You could treat each pixel as a rectangular cuboid, with a volume equal to <em>pixel width_×_pixel height_×_voxel depth</em> (as given in <span class="menuselection">Image ‣ Properties…</span>).
 Then multiply this by the number of pixels within the object.
