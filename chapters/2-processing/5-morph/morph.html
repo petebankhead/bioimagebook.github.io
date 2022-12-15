@@ -1319,15 +1319,15 @@ glue_fig(&#39;fig_fill_small_holes_cell&#39;, fig)
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7cd965f1-c8a6-4495-ba52-31fc9a8428de" name="d05593cf-a2bf-44b2-8985-b711dc4efcae" type="radio">
-</input><label class="sd-tab-label" for="7cd965f1-c8a6-4495-ba52-31fc9a8428de">
+<input checked="checked" id="018551c4-fdd9-4d35-afe6-56f9fe043cb6" name="b5abbba1-a7d9-4c7c-8dcb-f2ec39ac2350" type="radio">
+</input><label class="sd-tab-label" for="018551c4-fdd9-4d35-afe6-56f9fe043cb6">
 Question</label><div class="sd-tab-content docutils">
 <p>We don’t always want to fill <em>all</em> the holes within a binary image, but rather only the smaller ones.
 Can you think of a way to fill <em>only holes smaller than 1000 px²</em>, using area opening?</p>
 <p>You’ll need at least one operation described in previous chapter.</p>
 </div>
-<input id="bf1ddd0f-f4e9-4b21-b3f7-01c9be08f3f0" name="d05593cf-a2bf-44b2-8985-b711dc4efcae" type="radio">
-</input><label class="sd-tab-label" for="bf1ddd0f-f4e9-4b21-b3f7-01c9be08f3f0">
+<input id="fbe574ce-d41e-4a7e-b026-fcb7c182097e" name="b5abbba1-a7d9-4c7c-8dcb-f2ec39ac2350" type="radio">
+</input><label class="sd-tab-label" for="fbe574ce-d41e-4a7e-b026-fcb7c182097e">
 Answer</label><div class="sd-tab-content docutils">
 <p>One way to fill holes below a fixed size:</p>
 <ul class="simple">
@@ -1420,9 +1420,9 @@ bw_hist = morph.reconstruction(bw_high, bw_low)
 fig = create_figure(figsize=(8, 8))
 
 show_image(im, clip_percentile=0.5, title=&quot;(A) Grayscale image&quot;, pos=221)
-show_image(bw_low, title=&quot;(A) Marker image (low threshold)&quot;, pos=222)
-show_image(bw_high, title=f&quot;(B) Mask image (high threshold)&quot;, pos=223)
-show_image(bw_hist, title=f&quot;(C) Reconstruction result (hysteresis threshold)&quot;, pos=224)
+show_image(bw_low, title=&quot;(B) Mask image (low threshold)&quot;, pos=222)
+show_image(bw_high, title=f&quot;(C) Marker image (high threshold)&quot;, pos=223)
+show_image(bw_hist, title=f&quot;(D) Reconstruction result (hysteresis threshold)&quot;, pos=224)
 plt.tight_layout()
 
 glue_fig(&#39;fig_hysteresis_threshold_spots&#39;, fig)

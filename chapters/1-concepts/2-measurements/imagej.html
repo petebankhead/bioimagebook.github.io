@@ -831,16 +831,16 @@ from scipy import ndimage
 <p>Assuming your image is 2D and there is no ROI active (we will explore <a class="reference internal" href="../5-pixel_size/pixel_size.html#chap-dimensions"><span class="std std-ref">dimensions</span></a> and <a class="reference internal" href="#sec-imagej-rois"><span class="std std-ref">ROIs</span></a> later), both of these commands will use all the pixels in the image.</p>
 <p>We’ll explore how to customize the regions being measured and exactly what measurements are made later in this section, but already it should be possible to answer the following questions.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f89834e9-8105-4932-8b93-986b35b6f592" name="a6acfa20-905b-4081-b32d-baee8e6c6fc9" type="radio">
-</input><label class="sd-tab-label" for="f89834e9-8105-4932-8b93-986b35b6f592">
+<input checked="checked" id="39993cde-72c5-4c19-803e-3ed6386a0982" name="12afa235-39b7-4f49-84ca-f26c57a4e83f" type="radio">
+</input><label class="sd-tab-label" for="39993cde-72c5-4c19-803e-3ed6386a0982">
 Practical</label><div class="sd-tab-content docutils">
 <p><em>similar_1.tif</em>, <em>similar_2.tif</em>, <em>similar_3.tif</em> and <em>similar_4.tif</em> are all, well, similar.
 However only two contain <em>identical</em> pixel values.</p>
 <p>Which two images contain the same values?</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_2.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_3.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_4.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="30e417a8-1e53-4e14-aa96-68615615aeee" name="a6acfa20-905b-4081-b32d-baee8e6c6fc9" type="radio">
-</input><label class="sd-tab-label" for="30e417a8-1e53-4e14-aa96-68615615aeee">
+<input id="1e7f10e3-000c-4015-875c-5340e2c8261b" name="12afa235-39b7-4f49-84ca-f26c57a4e83f" type="radio">
+</input><label class="sd-tab-label" for="1e7f10e3-000c-4015-875c-5340e2c8261b">
 Solution</label><div class="sd-tab-content docutils">
 <p>Only <em>similar_1.tif</em> and <em>similar_3.tif</em> can contain the same values.
 An easy way to determine this is to compute the mean (average) of all pixels in each of the images.
@@ -852,8 +852,8 @@ Only those two images share the same mean value.</p>
 <a class="reference internal image-reference" href="../../../_images/disguised.png"><img alt="../../../_images/disguised.png" src="../../../_images/disguised.png" style="width: 50%;" /></a>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="896b2ffc-4568-4b99-8aac-3d9641d542c4" name="4176222f-7f6e-4fa3-8adb-07676630e029" type="radio">
-</input><label class="sd-tab-label" for="896b2ffc-4568-4b99-8aac-3d9641d542c4">
+<input checked="checked" id="4175fc4d-53b0-41a9-9ea1-a3d07ac3e17d" name="19ffb847-869a-4295-88fb-778c8a81e91a" type="radio">
+</input><label class="sd-tab-label" for="4175fc4d-53b0-41a9-9ea1-a3d07ac3e17d">
 Practical</label><div class="sd-tab-content docutils">
 <p><em>disguise_matching.tif</em> has lost its match.</p>
 <p>Which of the following three images have the same pixel values as <em>disguise_matching.tif</em>?</p>
@@ -864,8 +864,8 @@ Practical</label><div class="sd-tab-content docutils">
 </ul>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/disguise_matching.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_2.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_3.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="18c57785-ac0e-4e78-9763-9484b2d3bda6" name="4176222f-7f6e-4fa3-8adb-07676630e029" type="radio">
-</input><label class="sd-tab-label" for="18c57785-ac0e-4e78-9763-9484b2d3bda6">
+<input id="564761ce-d8ea-466f-b2bb-ffa5ed32693b" name="19ffb847-869a-4295-88fb-778c8a81e91a" type="radio">
+</input><label class="sd-tab-label" for="564761ce-d8ea-466f-b2bb-ffa5ed32693b">
 Solution</label><div class="sd-tab-content docutils">
 <p><em>disguised_3.tif</em> is the matching image.</p>
 </div>
@@ -1067,8 +1067,8 @@ This is another reason why choosing <span class="guilabel">Display label</span> 
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ddbf9d23-2249-426c-9d75-c3b9c5f96e89" name="94bcd25e-36e6-4619-ae0e-a34b4d952c74" type="radio">
-</input><label class="sd-tab-label" for="ddbf9d23-2249-426c-9d75-c3b9c5f96e89">
+<input checked="checked" id="867fab5e-1516-41ce-877f-e377d5115736" name="94e46252-b8e8-405b-8e6d-5a14e7840960" type="radio">
+</input><label class="sd-tab-label" for="867fab5e-1516-41ce-877f-e377d5115736">
 Practical</label><div class="sd-tab-content docutils">
 <p>For <a class="reference internal" href="#fig-rois-mask"><span class="std std-numref">Fig. 14</span></a>, I used the ROI Manager to create a ROI with a hole in it.</p>
 <p>To do this in <em>happy_cell.tif</em>, you can</p>
@@ -1082,8 +1082,8 @@ The end result is a ROI representing the cytoplasm, with the nucleus removed.</p
 <p><strong>Tip:</strong> Remember <span class="menuselection">Edit ‣ Selection ‣ Create Mask</span> will let you see which pixels are inside and which pixels are outside the ROI.</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/happy_cell.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="826a756e-5ce7-41af-bf47-d9eae380fb4e" name="94bcd25e-36e6-4619-ae0e-a34b4d952c74" type="radio">
-</input><label class="sd-tab-label" for="826a756e-5ce7-41af-bf47-d9eae380fb4e">
+<input id="f05a5e22-8aec-47be-a864-5fae627d9b6a" name="94e46252-b8e8-405b-8e6d-5a14e7840960" type="radio">
+</input><label class="sd-tab-label" for="f05a5e22-8aec-47be-a864-5fae627d9b6a">
 Solution</label><div class="sd-tab-content docutils">
 <p><span class="guilabel">XOR</span> (‘exclusive OR’) provides a ROI that contains pixels that are inside the cell OR inside the nucleus, but NOT both.</p>
 </div>
@@ -1143,8 +1143,8 @@ Flattened images may appear the same on screen, but are invariably RGB (see <a c
 <img alt="../../../_images/annotated_cyclists.png" src="../../../_images/annotated_cyclists.png" />
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="93d915d7-59da-4ca8-bc22-d708dfe4649b" name="2d722738-e3e0-4646-85ce-35767d78f856" type="radio">
-</input><label class="sd-tab-label" for="93d915d7-59da-4ca8-bc22-d708dfe4649b">
+<input checked="checked" id="7a6623dd-3e7b-4c80-bc53-c1bf2f70ac2d" name="ff96b60c-e34b-418c-b52f-c31b81ed34c6" type="radio">
+</input><label class="sd-tab-label" for="7a6623dd-3e7b-4c80-bc53-c1bf2f70ac2d">
 Practical</label><div class="sd-tab-content docutils">
 <p>Open the images <em>Annotated_Cyclists_1.tif</em> and <em>Annotated_Cyclists_2.tif</em>, which depict the 3 main cyclist characteristics I found most disconcerting as a pedestrian in Heidelberg.</p>
 <p>The images should initially look the same, but in one the text is an overlay, while in the other the image has been flattened.
@@ -1152,8 +1152,8 @@ Which is which? Try to think of several ways to investigate this.</p>
 <p><strong>Tip:</strong> Zooming in may help. So might searching the menus for overlay-related commands (aided by <kbd class="kbd docutils literal notranslate">L</kbd>).</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_2.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="f68b9dde-9e0e-4b5f-966f-c9ffdde53d78" name="2d722738-e3e0-4646-85ce-35767d78f856" type="radio">
-</input><label class="sd-tab-label" for="f68b9dde-9e0e-4b5f-966f-c9ffdde53d78">
+<input id="538376a5-fedf-46e2-b959-f34e018d3a0c" name="ff96b60c-e34b-418c-b52f-c31b81ed34c6" type="radio">
+</input><label class="sd-tab-label" for="538376a5-fedf-46e2-b959-f34e018d3a0c">
 Solution</label><div class="sd-tab-content docutils">
 <p><em>Annotated_Cyclists_1.tif</em> is the one with the overlay.</p>
 <p>Five ways to determine whether an annotation is an overlay or not:</p>
@@ -1171,15 +1171,15 @@ If the annotation remains visible on top of where you drew, it must be on an ove
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f5add77d-978d-4811-a093-c7a508494353" name="ca563420-bdaf-4e79-8595-181d9904ef38" type="radio">
-</input><label class="sd-tab-label" for="f5add77d-978d-4811-a093-c7a508494353">
+<input checked="checked" id="d6cf9ea0-8c24-480d-a92c-13b2fd93da35" name="7686f6b5-40fa-46a7-98d5-b6e26fccd170" type="radio">
+</input><label class="sd-tab-label" for="d6cf9ea0-8c24-480d-a92c-13b2fd93da35">
 Practical</label><div class="sd-tab-content docutils">
 <p>Using the cyclist image containing the overlay from the previous practical, rearrange the annotations so that they are each positioned next to different cyclists.</p>
 <p>You could do this by deleting the overlay and starting again, but there are other, faster possibilities (using a technique mentioned before, or the <span class="menuselection">Image ‣ Overlay ‣ To ROI Manager</span> command).</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_2.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="726cc0c3-c835-4707-ac2c-7b379841345a" name="ca563420-bdaf-4e79-8595-181d9904ef38" type="radio">
-</input><label class="sd-tab-label" for="726cc0c3-c835-4707-ac2c-7b379841345a">
+<input id="6c45f5db-9ad0-4e57-b0ee-3ceb1cfea9d7" name="7686f6b5-40fa-46a7-98d5-b6e26fccd170" type="radio">
+</input><label class="sd-tab-label" for="6c45f5db-9ad0-4e57-b0ee-3ceb1cfea9d7">
 Solution</label><div class="sd-tab-content docutils">
 <p>Click the annotation while holding down the <kbd class="kbd docutils literal notranslate">Alt</kbd> key, to bring it to life so it can be moved around again.
 This only works if certain tools are selected, e.g. <span class="guilabel">Rectangle</span> or <span class="guilabel">Text</span>, because some other tools have more overriding functions, such as zooming in or scrolling.</p>
