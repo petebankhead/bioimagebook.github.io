@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../README.html">
+                <a class="reference internal" href="../../../index.html">
                     Introduction to Bioimage Analysis
                 </a>
             </li>
@@ -798,17 +798,17 @@ title="Print to PDF"
 <span id="chap-rois"></span><h1>ImageJ: Measurements &amp; histograms<a class="headerlink" href="#imagej-measurements-histograms" title="Permalink to this headline">#</a></h1>
 <div class="cell tag_hide-cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%load_ext autoreload
-%autoreload 2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
 
-# Default imports
-import sys
-sys.path.append(&#39;../../../&#39;)
-from helpers import *
-from matplotlib import pyplot as plt
-from myst_nb import glue
-import numpy as np
-from scipy import ndimage
+<span class="c1"># Default imports</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../../../&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
 </pre></div>
 </div>
 </div>
@@ -831,16 +831,16 @@ from scipy import ndimage
 <p>Assuming your image is 2D and there is no ROI active (we will explore <a class="reference internal" href="../5-pixel_size/pixel_size.html#chap-dimensions"><span class="std std-ref">dimensions</span></a> and <a class="reference internal" href="#sec-imagej-rois"><span class="std std-ref">ROIs</span></a> later), both of these commands will use all the pixels in the image.</p>
 <p>We’ll explore how to customize the regions being measured and exactly what measurements are made later in this section, but already it should be possible to answer the following questions.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="39993cde-72c5-4c19-803e-3ed6386a0982" name="12afa235-39b7-4f49-84ca-f26c57a4e83f" type="radio">
-</input><label class="sd-tab-label" for="39993cde-72c5-4c19-803e-3ed6386a0982">
+<input checked="checked" id="78977d87-4a9b-4aba-b717-5f54e9c312f9" name="798395c9-a847-4a83-8ddb-4a1700c4f5ee" type="radio">
+</input><label class="sd-tab-label" for="78977d87-4a9b-4aba-b717-5f54e9c312f9">
 Practical</label><div class="sd-tab-content docutils">
 <p><em>similar_1.tif</em>, <em>similar_2.tif</em>, <em>similar_3.tif</em> and <em>similar_4.tif</em> are all, well, similar.
 However only two contain <em>identical</em> pixel values.</p>
 <p>Which two images contain the same values?</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_2.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_3.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/similar_4.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="1e7f10e3-000c-4015-875c-5340e2c8261b" name="12afa235-39b7-4f49-84ca-f26c57a4e83f" type="radio">
-</input><label class="sd-tab-label" for="1e7f10e3-000c-4015-875c-5340e2c8261b">
+<input id="d79ae846-30f7-426f-836c-ac61befbe9f8" name="798395c9-a847-4a83-8ddb-4a1700c4f5ee" type="radio">
+</input><label class="sd-tab-label" for="d79ae846-30f7-426f-836c-ac61befbe9f8">
 Solution</label><div class="sd-tab-content docutils">
 <p>Only <em>similar_1.tif</em> and <em>similar_3.tif</em> can contain the same values.
 An easy way to determine this is to compute the mean (average) of all pixels in each of the images.
@@ -852,8 +852,8 @@ Only those two images share the same mean value.</p>
 <a class="reference internal image-reference" href="../../../_images/disguised.png"><img alt="../../../_images/disguised.png" src="../../../_images/disguised.png" style="width: 50%;" /></a>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4175fc4d-53b0-41a9-9ea1-a3d07ac3e17d" name="19ffb847-869a-4295-88fb-778c8a81e91a" type="radio">
-</input><label class="sd-tab-label" for="4175fc4d-53b0-41a9-9ea1-a3d07ac3e17d">
+<input checked="checked" id="6d2fffe9-bb14-43db-afd0-be0ba8142b90" name="0b3ef597-9856-4390-9673-003695321d62" type="radio">
+</input><label class="sd-tab-label" for="6d2fffe9-bb14-43db-afd0-be0ba8142b90">
 Practical</label><div class="sd-tab-content docutils">
 <p><em>disguise_matching.tif</em> has lost its match.</p>
 <p>Which of the following three images have the same pixel values as <em>disguise_matching.tif</em>?</p>
@@ -864,8 +864,8 @@ Practical</label><div class="sd-tab-content docutils">
 </ul>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/disguise_matching.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_2.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/disguised_3.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="564761ce-d8ea-466f-b2bb-ffa5ed32693b" name="19ffb847-869a-4295-88fb-778c8a81e91a" type="radio">
-</input><label class="sd-tab-label" for="564761ce-d8ea-466f-b2bb-ffa5ed32693b">
+<input id="2814e5ee-55d3-4c6f-ac45-09230522035c" name="0b3ef597-9856-4390-9673-003695321d62" type="radio">
+</input><label class="sd-tab-label" for="2814e5ee-55d3-4c6f-ac45-09230522035c">
 Solution</label><div class="sd-tab-content docutils">
 <p><em>disguised_3.tif</em> is the matching image.</p>
 </div>
@@ -888,15 +888,15 @@ Seeing an area of 10 <em>might</em> mean 10 pixels<sup>2</sup>, or 10 µm<sup>2<
 </div>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(7, 4))
-plt.subplot(1, 3, 1)
-show_image(&#39;images/measure-image.png&#39;, title=&#39;Image&#39;)
-plt.subplot(1, 3, 2)
-show_image(&#39;images/measure-set.png&#39;, title=&#39;Set Measurements dialog&#39;)
-plt.subplot(1, 3, 3)
-show_image(&#39;images/measure-results.png&#39;, title=&#39;Results table&#39;)
-plt.tight_layout()
-glue_fig(&#39;fig_measure_results&#39;, fig)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/measure-image.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Image&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/measure-set.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Set Measurements dialog&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/measure-results.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Results table&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_measure_results&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -911,10 +911,10 @@ glue_fig(&#39;fig_measure_results&#39;, fig)
 </figure>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(8, 4))
-show_image(&#39;images/measure-results.png&#39;, title=&quot;&#39;Official&#39; results table&quot;, pos=121)
-show_image(&#39;images/measure-unofficial.png&#39;, title=&quot;&#39;Unofficial&#39; results table&quot;, pos=122)
-glue_fig(&#39;fig_measure_tables&#39;, fig)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/measure-results.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&#39;Official&#39; results table&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/measure-unofficial.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&#39;Unofficial&#39; results table&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_measure_tables&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -956,11 +956,11 @@ Conversely, some options are manifestly confusing and dangerous and should be us
 Only pixels within any ROI we draw will be included in the calculations when we run <span class="menuselection">Analyze ‣ Measure</span>.</p>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(3, 3.5))
-show_image(&#39;images/roi-toolbar.png&#39;, title=&quot;Tool bar&quot;, pos=211)
-show_image(&#39;images/roi-glasses.png&#39;, title=&quot;&#39;Image + ROI&quot;, pos=212)
-plt.tight_layout()
-glue_fig(&#39;fig_rois_drawing&#39;, fig)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/roi-toolbar.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tool bar&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/roi-glasses.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&#39;Image + ROI&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_rois_drawing&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -986,11 +986,11 @@ This is why some extra commands to create or adjust ROIs appear under the <span 
 This creates a new <a class="reference internal" href="../../2-processing/5-morph/morph.html#chap-binary"><span class="std std-ref">binary</span></a> (black and white) image that differentiates between the pixels that are inside and outside the ROI.</p>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(6, 4))
-show_image(&#39;images/binary-happy-cell.png&#39;, title=&quot;Image with ROI&quot;, pos=121)
-show_image(&#39;images/binary-happy-mask.png&#39;, title=&quot;Binary mask from ROI&quot;, pos=122)
-#plt.tight_layout()
-glue_fig(&#39;fig_rois_mask&#39;, fig)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/binary-happy-cell.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Image with ROI&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/binary-happy-mask.png&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Binary mask from ROI&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">122</span><span class="p">)</span>
+<span class="c1">#plt.tight_layout()</span>
+<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_rois_mask&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1067,8 +1067,8 @@ This is another reason why choosing <span class="guilabel">Display label</span> 
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="867fab5e-1516-41ce-877f-e377d5115736" name="94e46252-b8e8-405b-8e6d-5a14e7840960" type="radio">
-</input><label class="sd-tab-label" for="867fab5e-1516-41ce-877f-e377d5115736">
+<input checked="checked" id="38bdbe72-9d17-4438-90c8-b37578ebddde" name="7261bafe-9da0-4a2f-806d-1e039c92708d" type="radio">
+</input><label class="sd-tab-label" for="38bdbe72-9d17-4438-90c8-b37578ebddde">
 Practical</label><div class="sd-tab-content docutils">
 <p>For <a class="reference internal" href="#fig-rois-mask"><span class="std std-numref">Fig. 14</span></a>, I used the ROI Manager to create a ROI with a hole in it.</p>
 <p>To do this in <em>happy_cell.tif</em>, you can</p>
@@ -1082,8 +1082,8 @@ The end result is a ROI representing the cytoplasm, with the nucleus removed.</p
 <p><strong>Tip:</strong> Remember <span class="menuselection">Edit ‣ Selection ‣ Create Mask</span> will let you see which pixels are inside and which pixels are outside the ROI.</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/happy_cell.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="f05a5e22-8aec-47be-a864-5fae627d9b6a" name="94e46252-b8e8-405b-8e6d-5a14e7840960" type="radio">
-</input><label class="sd-tab-label" for="f05a5e22-8aec-47be-a864-5fae627d9b6a">
+<input id="6e3d427c-961e-4937-8c3c-1c678bb0e9bf" name="7261bafe-9da0-4a2f-806d-1e039c92708d" type="radio">
+</input><label class="sd-tab-label" for="6e3d427c-961e-4937-8c3c-1c678bb0e9bf">
 Solution</label><div class="sd-tab-content docutils">
 <p><span class="guilabel">XOR</span> (‘exclusive OR’) provides a ROI that contains pixels that are inside the cell OR inside the nucleus, but NOT both.</p>
 </div>
@@ -1121,10 +1121,10 @@ Therefore you may well want to use this command when creating figures or present
 <p>For more details on the impact of converting an image to RGB, see <a class="reference internal" href="../4-colors/colors.html#chap-colors"><span class="std std-ref">Channels &amp; colors</span></a>.</p>
 <div class="cell tag_hide-cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = create_figure(figsize=(8, 4))
-show_image(&#39;images/rois_and_overlays.png&#39;, pos=121)
-show_image(&#39;images/rois_flattened.png&#39;, pos=122)
-glue_fig(&#39;fig_rois_flatten&#39;, fig)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/rois_and_overlays.png&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">show_image</span><span class="p">(</span><span class="s1">&#39;images/rois_flattened.png&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">glue_fig</span><span class="p">(</span><span class="s1">&#39;fig_rois_flatten&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1143,8 +1143,8 @@ Flattened images may appear the same on screen, but are invariably RGB (see <a c
 <img alt="../../../_images/annotated_cyclists.png" src="../../../_images/annotated_cyclists.png" />
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7a6623dd-3e7b-4c80-bc53-c1bf2f70ac2d" name="ff96b60c-e34b-418c-b52f-c31b81ed34c6" type="radio">
-</input><label class="sd-tab-label" for="7a6623dd-3e7b-4c80-bc53-c1bf2f70ac2d">
+<input checked="checked" id="9abc01d5-932a-4ce2-a8a9-8e1d77a37e9e" name="1a2d0eb1-5e3a-450a-8527-1c3a0ffd1ccf" type="radio">
+</input><label class="sd-tab-label" for="9abc01d5-932a-4ce2-a8a9-8e1d77a37e9e">
 Practical</label><div class="sd-tab-content docutils">
 <p>Open the images <em>Annotated_Cyclists_1.tif</em> and <em>Annotated_Cyclists_2.tif</em>, which depict the 3 main cyclist characteristics I found most disconcerting as a pedestrian in Heidelberg.</p>
 <p>The images should initially look the same, but in one the text is an overlay, while in the other the image has been flattened.
@@ -1152,8 +1152,8 @@ Which is which? Try to think of several ways to investigate this.</p>
 <p><strong>Tip:</strong> Zooming in may help. So might searching the menus for overlay-related commands (aided by <kbd class="kbd docutils literal notranslate">L</kbd>).</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_2.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="538376a5-fedf-46e2-b959-f34e018d3a0c" name="ff96b60c-e34b-418c-b52f-c31b81ed34c6" type="radio">
-</input><label class="sd-tab-label" for="538376a5-fedf-46e2-b959-f34e018d3a0c">
+<input id="9c4316c7-e988-43bc-9136-941d90d7e14c" name="1a2d0eb1-5e3a-450a-8527-1c3a0ffd1ccf" type="radio">
+</input><label class="sd-tab-label" for="9c4316c7-e988-43bc-9136-941d90d7e14c">
 Solution</label><div class="sd-tab-content docutils">
 <p><em>Annotated_Cyclists_1.tif</em> is the one with the overlay.</p>
 <p>Five ways to determine whether an annotation is an overlay or not:</p>
@@ -1171,15 +1171,15 @@ If the annotation remains visible on top of where you drew, it must be on an ove
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d6cf9ea0-8c24-480d-a92c-13b2fd93da35" name="7686f6b5-40fa-46a7-98d5-b6e26fccd170" type="radio">
-</input><label class="sd-tab-label" for="d6cf9ea0-8c24-480d-a92c-13b2fd93da35">
+<input checked="checked" id="6d0a37d5-1f47-4382-a1ff-da83fac354b6" name="b7d384eb-afec-4beb-87c3-45b47076b9c8" type="radio">
+</input><label class="sd-tab-label" for="6d0a37d5-1f47-4382-a1ff-da83fac354b6">
 Practical</label><div class="sd-tab-content docutils">
 <p>Using the cyclist image containing the overlay from the previous practical, rearrange the annotations so that they are each positioned next to different cyclists.</p>
 <p>You could do this by deleting the overlay and starting again, but there are other, faster possibilities (using a technique mentioned before, or the <span class="menuselection">Image ‣ Overlay ‣ To ROI Manager</span> command).</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_1.tif&amp;open=https://github.com/bioimagebook/practical-data/blob/main/images/Annotated_Cyclists_2.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="6c45f5db-9ad0-4e57-b0ee-3ceb1cfea9d7" name="7686f6b5-40fa-46a7-98d5-b6e26fccd170" type="radio">
-</input><label class="sd-tab-label" for="6c45f5db-9ad0-4e57-b0ee-3ceb1cfea9d7">
+<input id="822722f4-4689-4b63-ba6b-f621565618bf" name="b7d384eb-afec-4beb-87c3-45b47076b9c8" type="radio">
+</input><label class="sd-tab-label" for="822722f4-4689-4b63-ba6b-f621565618bf">
 Solution</label><div class="sd-tab-content docutils">
 <p>Click the annotation while holding down the <kbd class="kbd docutils literal notranslate">Alt</kbd> key, to bring it to life so it can be moved around again.
 This only works if certain tools are selected, e.g. <span class="guilabel">Rectangle</span> or <span class="guilabel">Text</span>, because some other tools have more overriding functions, such as zooming in or scrolling.</p>
@@ -1269,7 +1269,7 @@ We will revisit this in <a class="reference internal" href="../5-pixel_size/pixe
   
     By Pete Bankhead<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>
