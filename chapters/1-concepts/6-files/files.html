@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -49,6 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/1-concepts/6-files/files.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ImageJ: Files &amp; file formats" href="imagej.html" />
@@ -133,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -1044,15 +1053,15 @@ A TIFF image could contain uncompressed data, or data compressed using a variety
 To determine if a TIFF image has used lossy compression, more detective work may be needed (e.g. zooming in and hunting for artefacts, comparing pixel statistics with the original data file, or using software to check for metadata).</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="24c9f2da-0433-465b-94ae-899c51ded7fa" name="557a9d23-489f-4739-a082-10a703dffd4d" type="radio">
-</input><label class="sd-tab-label" for="24c9f2da-0433-465b-94ae-899c51ded7fa">
+<input checked="checked" id="2c18f9f0-c055-4e5a-a519-d1c4ba07c98a" name="5190727d-3eab-4340-a5ca-536a41c21a1b" type="radio">
+</input><label class="sd-tab-label" for="2c18f9f0-c055-4e5a-a519-d1c4ba07c98a">
 Question</label><div class="sd-tab-content docutils">
 <p>It takes approximately 1 MB to store (1,000,000 bytes) an 8-bit uncompressed image with 1,000,000 pixels.</p>
 <p>How much memory does it take to store a 16-bit image with the same number of pixels?</p>
 <p><em>You can ignore the tiny bit of extra space needed to store any associated metadata.</em></p>
 </div>
-<input id="7fafc0a8-bc21-4d57-99d2-055fc8c9bd88" name="557a9d23-489f-4739-a082-10a703dffd4d" type="radio">
-</input><label class="sd-tab-label" for="7fafc0a8-bc21-4d57-99d2-055fc8c9bd88">
+<input id="5932cf04-e4c1-4601-835b-e3ee859a0f3e" name="5190727d-3eab-4340-a5ca-536a41c21a1b" type="radio">
+</input><label class="sd-tab-label" for="5932cf04-e4c1-4601-835b-e3ee859a0f3e">
 Answer</label><div class="sd-tab-content docutils">
 <p>2 MB.</p>
 <p>8 bits corresponds to 1 byte, so 16 bits correspond to 2 bytes.
@@ -1060,16 +1069,16 @@ We multiply the number of bytes per pixel by the number of pixels to get the min
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b311e2b5-4c9b-4d18-bec4-e3e3654f685b" name="5bf579c8-1dd2-4cf9-bf5b-8e161413c043" type="radio">
-</input><label class="sd-tab-label" for="b311e2b5-4c9b-4d18-bec4-e3e3654f685b">
+<input checked="checked" id="ed37d460-0a9e-4032-849f-a1bea932f03f" name="713a12ac-e430-4002-b698-2ea259d95f53" type="radio">
+</input><label class="sd-tab-label" for="ed37d460-0a9e-4032-849f-a1bea932f03f">
 Question</label><div class="sd-tab-content docutils">
 <p>Suppose you have an original image in TIFF format (no compression).
 First, you save it as JPEG (lossy compression) to reduce the file size, then close it and throw away the TIFF.</p>
 <p>Upon hearing JPEG is bad, you reopen the image and save it as TIFF  once more (no compression), throwing away the JPEG.
 How does your final TIFF image look, and what is its file size?</p>
 </div>
-<input id="77564c48-df76-4628-a65b-767b4e9405de" name="5bf579c8-1dd2-4cf9-bf5b-8e161413c043" type="radio">
-</input><label class="sd-tab-label" for="77564c48-df76-4628-a65b-767b4e9405de">
+<input id="eef4112e-f142-43de-854f-f041f017b2b6" name="713a12ac-e430-4002-b698-2ea259d95f53" type="radio">
+</input><label class="sd-tab-label" for="eef4112e-f142-43de-854f-f041f017b2b6">
 Answer</label><div class="sd-tab-content docutils">
 <p>The final image will look exactly like the JPEG version, <em>but with the same file size as the original TIFF!</em>
 As such, it has ‘the worst of both worlds’.</p>

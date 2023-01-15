@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -49,6 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/2-processing/4-filters/imagej.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Morphological operations" href="../5-morph/morph.html" />
@@ -133,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -805,27 +814,27 @@ title="Print to PDF"
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Most of the filters we’ve considered are available through the <span class="menuselection">Process ‣ Filters</span> submenu.
+<p>Most of the filters we’ve considered are available through the <span class="menuselection notranslate">Process ‣ Filters</span> submenu.
 This section adds a little more information about their implementation in ImageJ, and asks a few questions.</p>
 </section>
 <section id="linear-filters">
 <h2>Linear filters<a class="headerlink" href="#linear-filters" title="Permalink to this headline">#</a></h2>
 <section id="mean-filters">
 <h3>Mean filters<a class="headerlink" href="#mean-filters" title="Permalink to this headline">#</a></h3>
-<p>The easiest way to apply a 3×3 mean filter in ImageJ is through the <span class="menuselection">Process ‣ Smooth</span> command.
+<p>The easiest way to apply a 3×3 mean filter in ImageJ is through the <span class="menuselection notranslate">Process ‣ Smooth</span> command.
 The fact that the shortcut is <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd> can almost make this <em>too</em> easy, as I find myself accidentally smoothing when I really wanted to save my image.
 Take care.</p>
-<p>To apply larger mean filters, the command is <span class="menuselection">Process ‣ Filters ‣ Mean…</span>.
-It uses approximately circular neighborhoods, and the neighborhood size is adjusted by choosing a <span class="guilabel">Radius</span> value.
-The <span class="menuselection">Process ‣ Filters ‣ Show Circular Masks</span> command displays the neighborhoods used for different values of <span class="guilabel">Radius</span>.
-If you happen to choose <em>Radius = 1</em>, you get a 3×3 filter – and the same results as using <span class="menuselection">Smooth</span>.</p>
+<p>To apply larger mean filters, the command is <span class="menuselection notranslate">Process ‣ Filters ‣ Mean…</span>.
+It uses approximately circular neighborhoods, and the neighborhood size is adjusted by choosing a <span class="guilabel notranslate">Radius</span> value.
+The <span class="menuselection notranslate">Process ‣ Filters ‣ Show Circular Masks</span> command displays the neighborhoods used for different values of <span class="guilabel notranslate">Radius</span>.
+If you happen to choose <em>Radius = 1</em>, you get a 3×3 filter – and the same results as using <span class="menuselection notranslate">Smooth</span>.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-masks.png"><img alt="../../../_images/imagej-filters-masks.png" class="align-center" src="../../../_images/imagej-filters-masks.png" style="width: 35%;" /></a>
 </section>
 <section id="gaussian-filters">
 <h3>Gaussian filters<a class="headerlink" href="#gaussian-filters" title="Permalink to this headline">#</a></h3>
-<p><span class="menuselection">Process ‣ Filters ‣ Gaussian Blur…</span> is the command that implements a Gaussian filter.</p>
-<p>In the event that you want a Gaussian filter that isn’t isotropic (i.e. has a different size along different dimensions), <span class="menuselection">Process ‣ Filters ‣ Gaussian Blur 3D…</span> can be used.</p>
-<p>Although not <em>really</em> recommended, unsharp masking is available through <span class="menuselection">Process ‣ Filters ‣ Unsharp mask…</span>.</p>
+<p><span class="menuselection notranslate">Process ‣ Filters ‣ Gaussian Blur…</span> is the command that implements a Gaussian filter.</p>
+<p>In the event that you want a Gaussian filter that isn’t isotropic (i.e. has a different size along different dimensions), <span class="menuselection notranslate">Process ‣ Filters ‣ Gaussian Blur 3D…</span> can be used.</p>
+<p>Although not <em>really</em> recommended, unsharp masking is available through <span class="menuselection notranslate">Process ‣ Filters ‣ Unsharp mask…</span>.</p>
 <div class="admonition-difference-of-gaussians admonition">
 <p class="admonition-title">Difference of Gaussians</p>
 <p>There’s currently no direct command in ImageJ to implement difference of Gaussians filtering, rather the steps need to be pieced together with image duplication and subtraction.
@@ -834,17 +843,17 @@ However <a class="reference internal" href="../../appendices/macros/macro_dog.ht
 </section>
 <section id="custom-linear-filters">
 <h3>Custom linear filters<a class="headerlink" href="#custom-linear-filters" title="Permalink to this headline">#</a></h3>
-<p><span class="menuselection">Process ‣ Filters ‣ Convolve…</span> makes it possible to define any custom linear filter by entering the values of the desired coefficients, separated by spaces and arranged in rows and columns.
-If you <span class="guilabel">Normalize Kernel</span> is selected, then the coefficients are scaled so that they add to 1, by dividing by the sum of all the coefficients – unless the sum is 0, in which case requesting normalizion does nothing.</p>
+<p><span class="menuselection notranslate">Process ‣ Filters ‣ Convolve…</span> makes it possible to define any custom linear filter by entering the values of the desired coefficients, separated by spaces and arranged in rows and columns.
+If you <span class="guilabel notranslate">Normalize Kernel</span> is selected, then the coefficients are scaled so that they add to 1, by dividing by the sum of all the coefficients – unless the sum is 0, in which case requesting normalizion does nothing.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-convolve-custom.png"><img alt="../../../_images/imagej-filters-convolve-custom.png" class="align-center" src="../../../_images/imagej-filters-convolve-custom.png" style="width: 80%;" /></a>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="63301992-8717-4069-94d1-2546340e8f5d" name="a0e517f6-bb5c-4ac0-aab3-d3d32bf81c52" type="radio">
-</input><label class="sd-tab-label" for="63301992-8717-4069-94d1-2546340e8f5d">
+<input checked="checked" id="af54df9a-2ed6-477b-ae0b-0fc735e18016" name="5a44fd85-f480-4cbf-b886-b4177b30259a" type="radio">
+</input><label class="sd-tab-label" for="af54df9a-2ed6-477b-ae0b-0fc735e18016">
 Question</label><div class="sd-tab-content docutils">
-<p>When defining an <em>n_×_n</em> filter kernel with <span class="menuselection">Convolve…</span>, ImageJ insists that <strong>n</strong> is an odd number. Why?</p>
+<p>When defining an <em>n_×_n</em> filter kernel with <span class="menuselection notranslate">Convolve…</span>, ImageJ insists that <strong>n</strong> is an odd number. Why?</p>
 </div>
-<input id="47d37c29-bd31-4dc9-835a-a99612a705a1" name="a0e517f6-bb5c-4ac0-aab3-d3d32bf81c52" type="radio">
-</input><label class="sd-tab-label" for="47d37c29-bd31-4dc9-835a-a99612a705a1">
+<input id="250f79f3-9515-45c3-9ab9-f43ef26a8284" name="5a44fd85-f480-4cbf-b886-b4177b30259a" type="radio">
+</input><label class="sd-tab-label" for="250f79f3-9515-45c3-9ab9-f43ef26a8284">
 Answer</label><div class="sd-tab-content docutils">
 <p>If <em>n</em> is an odd number, the filter has a clear central pixel.
 This makes it possible to center the filter kernel on a pixel on the image.</p>
@@ -855,42 +864,42 @@ This makes it possible to center the filter kernel on a pixel on the image.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-convolve-1.png"><img alt="../../../_images/imagej-filters-convolve-1.png" class="align-center" src="../../../_images/imagej-filters-convolve-1.png" style="width: 80%;" /></a>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="700725bb-5833-43a8-a8b4-1db47b2d7564" name="ad4f0bb6-21a7-47bc-a750-3a55dba3ab87" type="radio">
-</input><label class="sd-tab-label" for="700725bb-5833-43a8-a8b4-1db47b2d7564">
+<input checked="checked" id="7a8ef0ab-78dd-41f5-b5fb-5cac0def89e0" name="79469c95-a3cc-4e5a-8175-5fb81905bfc0" type="radio">
+</input><label class="sd-tab-label" for="7a8ef0ab-78dd-41f5-b5fb-5cac0def89e0">
 Question</label><div class="sd-tab-content docutils">
 <p>Predict what happens when you convolve an image using a filter that consists of a single coefficient with a value -1 in the following cases:</p>
 <ol class="simple">
-<li><p><span class="guilabel">Normalize Kernel</span> is checked</p></li>
-<li><p>You have a 32-bit image, <span class="guilabel">Normalize Kernel</span> is unchecked</p></li>
-<li><p>You have an 8-bit image, <span class="guilabel">Normalize Kernel</span> is unchecked</p></li>
+<li><p><span class="guilabel notranslate">Normalize Kernel</span> is checked</p></li>
+<li><p>You have a 32-bit image, <span class="guilabel notranslate">Normalize Kernel</span> is unchecked</p></li>
+<li><p>You have an 8-bit image, <span class="guilabel notranslate">Normalize Kernel</span> is unchecked</p></li>
 </ol>
 </div>
-<input id="03a59113-3bf2-460e-905b-6f5516f04990" name="ad4f0bb6-21a7-47bc-a750-3a55dba3ab87" type="radio">
-</input><label class="sd-tab-label" for="03a59113-3bf2-460e-905b-6f5516f04990">
+<input id="c4145e8b-8032-46ac-b8b5-5c7e4a8df18e" name="79469c95-a3cc-4e5a-8175-5fb81905bfc0" type="radio">
+</input><label class="sd-tab-label" for="c4145e8b-8032-46ac-b8b5-5c7e4a8df18e">
 Answer</label><div class="sd-tab-content docutils">
 <p>The results of convolving with a single -1 coefficient in different circumstances:</p>
 <ol class="simple">
-<li><p><em><span class="guilabel">Normalize Kernel</span> is checked</em>: Nothing at all happens. The normalization makes the filter just a single 1… and convolving with a single 1 leaves the image unchanged.</p></li>
-<li><p><em>You have a 32-bit image (<span class="guilabel">Normalize Kernel</span> unchecked)</em>: The pixel values become negative, and the image looks inverted.</p></li>
-<li><p><em>You have an 8-bit image (<span class="guilabel">Normalize Kernel</span> unchecked)</em>: The pixel values would become negative, but then cannot be stored in an 8-bit unsigned integer form. Therefore, all pixels simply become clipped to zero.</p></li>
+<li><p><em><span class="guilabel notranslate">Normalize Kernel</span> is checked</em>: Nothing at all happens. The normalization makes the filter just a single 1… and convolving with a single 1 leaves the image unchanged.</p></li>
+<li><p><em>You have a 32-bit image (<span class="guilabel notranslate">Normalize Kernel</span> unchecked)</em>: The pixel values become negative, and the image looks inverted.</p></li>
+<li><p><em>You have an 8-bit image (<span class="guilabel notranslate">Normalize Kernel</span> unchecked)</em>: The pixel values would become negative, but then cannot be stored in an 8-bit unsigned integer form. Therefore, all pixels simply become clipped to zero.</p></li>
 </ol>
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8c874e4c-87b7-4ed5-94fa-6c5a4bebe7bf" name="114755a3-2a1e-4459-a873-03d672b7b5f8" type="radio">
-</input><label class="sd-tab-label" for="8c874e4c-87b7-4ed5-94fa-6c5a4bebe7bf">
+<input checked="checked" id="7d9b8675-41a5-4a3c-87c0-2c6c251ecc00" name="8b30da49-8258-4ef5-9fa2-89342f04941d" type="radio">
+</input><label class="sd-tab-label" for="7d9b8675-41a5-4a3c-87c0-2c6c251ecc00">
 Practical</label><div class="sd-tab-content docutils">
-<p>Using any image, work out which of the methods for dealing with boundaries shown in <a class="reference internal" href="filters.html#fig-filter-boundaries"><span class="std std-numref">Fig. 84</span></a> is used by ImageJ’s <span class="menuselection">Convolve…</span> command.</p>
+<p>Using any image, work out which of the methods for dealing with boundaries shown in <a class="reference internal" href="filters.html#fig-filter-boundaries"><span class="std std-numref">Fig. 84</span></a> is used by ImageJ’s <span class="menuselection notranslate">Convolve…</span> command.</p>
 <p><strong>Note:</strong> This requires a bit of creativity.
 It will certainly help to use an image with some variation at the image boundary.
-I used <span class="menuselection">File ‣ Open Samples ‣ Blobs</span>.</p>
+I used <span class="menuselection notranslate">File ‣ Open Samples ‣ Blobs</span>.</p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="2a61843e-cadc-48ad-a364-761a28fa8632" name="114755a3-2a1e-4459-a873-03d672b7b5f8" type="radio">
-</input><label class="sd-tab-label" for="2a61843e-cadc-48ad-a364-761a28fa8632">
+<input id="d6bc881c-d43b-4ffd-8fea-2ab119cafb10" name="8b30da49-8258-4ef5-9fa2-89342f04941d" type="radio">
+</input><label class="sd-tab-label" for="d6bc881c-d43b-4ffd-8fea-2ab119cafb10">
 Solution</label><div class="sd-tab-content docutils">
-<p>Replication of boundary pixels is the default method used by <span class="menuselection">Process ‣ Filters ‣ Convolve…</span> in ImageJ (although other filtering plugins by different authors might use different methods).</p>
-<p>My approach to test this involved using <span class="menuselection">Convolve…</span> with a filter that consisting of a 1 followed by a lot of zeros (e.g. <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0...</span></code>).
+<p>Replication of boundary pixels is the default method used by <span class="menuselection notranslate">Process ‣ Filters ‣ Convolve…</span> in ImageJ (although other filtering plugins by different authors might use different methods).</p>
+<p>My approach to test this involved using <span class="menuselection notranslate">Convolve…</span> with a filter that consisting of a 1 followed by a lot of zeros (e.g. <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0...</span></code>).
 This basically shifts the image to the right, bringing whatever is outside the image boundary into view.</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-filters-convolve-padding.png"><img alt="../../../_images/imagej-filters-convolve-padding.png" class="align-center" src="../../../_images/imagej-filters-convolve-padding.png" style="width: 80%;" /></a>
 </div>
@@ -902,33 +911,33 @@ This basically shifts the image to the right, bringing whatever is outside the i
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="530a0926-6547-4fa4-811f-bfd998ce1838" name="ee2c8b23-c267-4103-b784-10512b529900" type="radio">
-</input><label class="sd-tab-label" for="530a0926-6547-4fa4-811f-bfd998ce1838">
+<input checked="checked" id="38ddfb33-e0d0-4a69-b9e0-b16bdaf84956" name="37e44edf-edc0-4829-8df1-753ecb40acf6" type="radio">
+</input><label class="sd-tab-label" for="38ddfb33-e0d0-4a69-b9e0-b16bdaf84956">
 Practical</label><div class="sd-tab-content docutils">
 <p>Practice using the commands we’ve met so far by determining the <strong>gradient magnitude</strong> of an image, as described <a class="reference internal" href="filters.html#sec-filters-gradient"><span class="std std-ref">here</span></a>.</p>
 <p>You will need to use</p>
 <ul class="simple">
-<li><p><span class="menuselection">Image ‣ Duplicate…</span></p></li>
-<li><p><span class="menuselection">Process ‣ Filters ‣ Convolve…</span></p></li>
-<li><p><span class="menuselection">Process ‣ Image Calculator…</span></p></li>
-<li><p>Several commands in the <span class="menuselection">Process ‣ Math</span> submenu</p></li>
+<li><p><span class="menuselection notranslate">Image ‣ Duplicate…</span></p></li>
+<li><p><span class="menuselection notranslate">Process ‣ Filters ‣ Convolve…</span></p></li>
+<li><p><span class="menuselection notranslate">Process ‣ Image Calculator…</span></p></li>
+<li><p>Several commands in the <span class="menuselection notranslate">Process ‣ Math</span> submenu</p></li>
 <li><p>Something else we’ve used before… possibly</p></li>
 </ul>
-<p>If you need a sample image, you can use <span class="menuselection">File ‣ Open samples ‣ Blobs (25K)</span>.
+<p>If you need a sample image, you can use <span class="menuselection notranslate">File ‣ Open samples ‣ Blobs (25K)</span>.
 <em>(Be sure to pay attention to the bit-depth!)</em></p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="3446bea2-bd62-4fd4-99f4-33215c6edfb9" name="ee2c8b23-c267-4103-b784-10512b529900" type="radio">
-</input><label class="sd-tab-label" for="3446bea2-bd62-4fd4-99f4-33215c6edfb9">
+<input id="8ef5a7bc-e025-4917-8904-555291080cea" name="37e44edf-edc0-4829-8df1-753ecb40acf6" type="radio">
+</input><label class="sd-tab-label" for="8ef5a7bc-e025-4917-8904-555291080cea">
 Solution</label><div class="sd-tab-content docutils">
 <p>The process to calculate the gradient magnitude is:</p>
 <ol class="simple">
 <li><p>Convert the image to 32-bit (if it isn’t already 32-bit)</p></li>
 <li><p>Duplicate the image</p></li>
 <li><p>Convolve one copy of the image with the horizontal gradient filter, and one with the vertical (i.e. coefficients <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">0</span> <span class="pre">1</span></code> arranged as a row or column)</p></li>
-<li><p>Compute the square of both images (<span class="menuselection">Process ‣ Math ‣ Square</span>)</p></li>
+<li><p>Compute the square of both images (<span class="menuselection notranslate">Process ‣ Math ‣ Square</span>)</p></li>
 <li><p>Use the image calculator to add the images together</p></li>
-<li><p>Compute the square root of the resulting image (<span class="menuselection">Process ‣ Math ‣ Square Root</span>)</p></li>
+<li><p>Compute the square root of the resulting image (<span class="menuselection notranslate">Process ‣ Math ‣ Square Root</span>)</p></li>
 </ol>
 <p>Here’s a macro that implements these steps:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="s">&quot;32-bit&quot;</span><span class="p">);</span>
@@ -949,7 +958,7 @@ Solution</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>The convolution results in negative values, which is why the 32-bit conversion is needed.</p>
-<p><strong>Note:</strong> This is (almost) what is done by the command <span class="menuselection">Process ‣ Find Edges</span>, except the gradient filters are slightly different.</p>
+<p><strong>Note:</strong> This is (almost) what is done by the command <span class="menuselection notranslate">Process ‣ Find Edges</span>, except the gradient filters are slightly different.</p>
 </div>
 </div>
 <figure class="margin align-center" id="id2">
@@ -959,19 +968,19 @@ Solution</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="dd9be21d-387b-4c81-b4ca-a0224aea83a5" name="722f693c-3a51-4c38-9311-29e28227c30b" type="radio">
-</input><label class="sd-tab-label" for="dd9be21d-387b-4c81-b4ca-a0224aea83a5">
+<input checked="checked" id="16647b05-e3a7-4c70-b3a8-6e77e6ae3670" name="0da45095-b9d0-4953-90a6-86fc1834efdf" type="radio">
+</input><label class="sd-tab-label" for="16647b05-e3a7-4c70-b3a8-6e77e6ae3670">
 Practical</label><div class="sd-tab-content docutils">
-<p>ImageJ has a LUT called <strong>edges</strong> under <span class="menuselection">Image ‣ Lookup Tables ‣ Edges</span>.
-Applied to <span class="menuselection">File ‣ Open samples ‣ Blobs (25K)</span>, it does a rather good job of highlighting edges – without actually changing the pixels at all.</p>
+<p>ImageJ has a LUT called <strong>edges</strong> under <span class="menuselection notranslate">Image ‣ Lookup Tables ‣ Edges</span>.
+Applied to <span class="menuselection notranslate">File ‣ Open samples ‣ Blobs (25K)</span>, it does a rather good job of highlighting edges – without actually changing the pixels at all.</p>
 <p>How does it work?
 Does it apply a filter?</p>
 <p><a class="reference external" href="https://ij.imjoy.io?run=https://gist.github.com/petebankhead/cbbb6f210d173c8488247799efc3b970"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="f8f0f394-5c9b-4fa2-9638-0446df1f5a47" name="722f693c-3a51-4c38-9311-29e28227c30b" type="radio">
-</input><label class="sd-tab-label" for="f8f0f394-5c9b-4fa2-9638-0446df1f5a47">
+<input id="481f0c67-4802-4a0d-bb69-00bbbbb0269d" name="0da45095-b9d0-4953-90a6-86fc1834efdf" type="radio">
+</input><label class="sd-tab-label" for="481f0c67-4802-4a0d-bb69-00bbbbb0269d">
 Solution</label><div class="sd-tab-content docutils">
-<p>The <span class="menuselection">edges</span> LUT shows most low and high pixel values as black – and uses lighter shades of gray only for a small range of values in between (see <span class="menuselection">Image ‣ Color ‣ Edit LUT…</span>).
+<p>The <span class="menuselection notranslate">edges</span> LUT shows most low and high pixel values as black – and uses lighter shades of gray only for a small range of values in between (see <span class="menuselection notranslate">Image ‣ Color ‣ Edit LUT…</span>).
 In any image with a good separation of background and foreground pixels, but which still has a somewhat smooth transition between them, this means everything but the edges can appear black.</p>
 <p>All this is achieved by a LUT: no pixels were harmed, there was no filtering applied.</p>
 </div>
@@ -984,9 +993,9 @@ In any image with a good separation of background and foreground pixels, but whi
 <h3>Rank filters<a class="headerlink" href="#rank-filters" title="Permalink to this headline">#</a></h3>
 <p>The main rank filters are to be found exactly where you might expect them:</p>
 <ul class="simple">
-<li><p><span class="menuselection">Process ‣ Filters ‣ Median…</span></p></li>
-<li><p><span class="menuselection">Process ‣ Filters ‣ Minimum…</span></p></li>
-<li><p><span class="menuselection">Process ‣ Filters ‣ Maximum…</span></p></li>
+<li><p><span class="menuselection notranslate">Process ‣ Filters ‣ Median…</span></p></li>
+<li><p><span class="menuselection notranslate">Process ‣ Filters ‣ Minimum…</span></p></li>
+<li><p><span class="menuselection notranslate">Process ‣ Filters ‣ Maximum…</span></p></li>
 </ul>
 <p>ImageJ uses circular neighborhoods with its built-in rank filters, similar to how mean filters are implemented.
 We will meet these filters again in <a class="reference internal" href="../5-morph/morph.html#chap-morph"><span class="std std-ref">Morphological operations</span></a>.</p>
@@ -995,7 +1004,7 @@ We will meet these filters again in <a class="reference internal" href="../5-mor
 <h3>Removing outliers<a class="headerlink" href="#removing-outliers" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="filters.html#fig-processing-filters-speckled"><span class="std std-numref">Fig. 86</span></a> shows that median filtering is much better than mean filtering for removing outliers.
 We might encounter this if something in the microscope is not quite functioning as expected or if dark noise is a problem, but otherwise we expect the noise in fluorescence microscopy images to produce few really extreme values (see <a class="reference internal" href="../../3-fluorescence/3-formation_noise/formation_noise.html#chap-formation-noise"><span class="std std-ref">Noise</span></a>).</p>
-<p>Nevertheless, <span class="menuselection">Process ‣ Noise ‣ Remove Outliers…</span> provides an alternative if isolated bright values are present.
+<p>Nevertheless, <span class="menuselection notranslate">Process ‣ Noise ‣ Remove Outliers…</span> provides an alternative if isolated bright values are present.
 This is a nonlinear filter that inserts median values <em>only whenever a pixel is found that is further away from the local median than some adjustable threshold</em>.</p>
 <p>It’s therefore like a more selective median filter that will only modify the image at pixels where it is considered really necessary.</p>
 </section>

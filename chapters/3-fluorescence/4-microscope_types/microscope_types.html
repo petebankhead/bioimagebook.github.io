@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -49,6 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/3-fluorescence/4-microscope_types/microscope_types.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Beyond this book" href="../../appendices/next_steps/next_steps.html" />
@@ -133,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -928,13 +937,13 @@ Also, because single pixels are recorded separately, the image can (potentially)
 Images usually contain thousands to millions of pixels, and so only a tiny fraction of the time required to record an image is spent detecting photons for any one pixel in a LSCM image – unlike in the widefield case, where photons can be detected for all pixels over the entire image acquisition time. This can cause LSCM image acquisition to be comparatively slow, noisy (in terms of few detected photons) or both.
 Spatial information is therefore gained at a cost in noise and/or temporal resolution.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="835932ef-209a-46f2-b2ae-c49ba8d0f945" name="60ccb77b-0e39-4ed4-9ce5-874559bac0ff" type="radio">
-</input><label class="sd-tab-label" for="835932ef-209a-46f2-b2ae-c49ba8d0f945">
+<input checked="checked" id="2a61e7be-86f6-4e8e-90ce-46eb98d26349" name="d649c848-29cf-4ae0-a229-b7a77a9cd4b6" type="radio">
+</input><label class="sd-tab-label" for="2a61e7be-86f6-4e8e-90ce-46eb98d26349">
 Question</label><div class="sd-tab-content docutils">
 <p>Why is it often recommended that the pinhole in LSCM be set to have the same size as one Airy disk? And why is it sometimes better not to strictly follow this recommendation?</p>
 </div>
-<input id="e71e76b7-08d4-42c5-96ce-0c4365185a92" name="60ccb77b-0e39-4ed4-9ce5-874559bac0ff" type="radio">
-</input><label class="sd-tab-label" for="e71e76b7-08d4-42c5-96ce-0c4365185a92">
+<input id="e27545f9-b4b0-4f91-bb52-b9806e5eac7a" name="d649c848-29cf-4ae0-a229-b7a77a9cd4b6" type="radio">
+</input><label class="sd-tab-label" for="e27545f9-b4b0-4f91-bb52-b9806e5eac7a">
 Answer</label><div class="sd-tab-content docutils">
 <p>As described in <a class="reference internal" href="../2-formation_spatial/formation_spatial.html#chap-formation-spatial"><span class="std std-ref">Blur &amp; the PSF</span></a>, the vast majority of the light from the in-focus plane falls within the Airy disk.
 Using a pinhole smaller than this can result in so little light being detected that the image becomes too noisy to be useful.
@@ -1139,14 +1148,14 @@ See <a class="reference internal" href="#fig-ccd"><span class="std std-numref">F
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="aa98ed27-f2a8-4d7c-aec2-aa9ec2eb270f" name="d07acce3-5245-476e-82f7-8ae537b9fd0d" type="radio">
-</input><label class="sd-tab-label" for="aa98ed27-f2a8-4d7c-aec2-aa9ec2eb270f">
+<input checked="checked" id="5c33acc8-868b-451a-a5e1-85a408c992a1" name="1b0a3a62-ea0f-448c-8966-c7bb68bb8f7e" type="radio">
+</input><label class="sd-tab-label" for="5c33acc8-868b-451a-a5e1-85a408c992a1">
 Question</label><div class="sd-tab-content docutils">
 <p>From a practical point of view, an EMCCD is rather like having a CCD with no read noise, but with half the QE.
 Under what circumstances (i.e. high or low numbers of photons) is an EMCCD preferable to a CCD?</p>
 </div>
-<input id="015562cc-def1-464c-bba5-3c1a5b554416" name="d07acce3-5245-476e-82f7-8ae537b9fd0d" type="radio">
-</input><label class="sd-tab-label" for="015562cc-def1-464c-bba5-3c1a5b554416">
+<input id="dd5d6f18-4780-41d3-b0b9-a1ae1d48133b" name="1b0a3a62-ea0f-448c-8966-c7bb68bb8f7e" type="radio">
+</input><label class="sd-tab-label" for="dd5d6f18-4780-41d3-b0b9-a1ae1d48133b">
 Answer</label><div class="sd-tab-content docutils">
 <p>The gain register of EMCCDs offers benefits primarily when few photons are available (i.e. when read-noise is the main problem, such as in SDCM).
 CCDs are preferable when many photons are available (e.g. in widefield).</p>
@@ -1160,13 +1169,13 @@ The read noise of 10 is comparatively insignificant, and there is nothing to gai
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8845804b-297c-48fb-afbf-3bdaa842f613" name="9261a88a-b6f5-430a-a648-af9dde15a3fa" type="radio">
-</input><label class="sd-tab-label" for="8845804b-297c-48fb-afbf-3bdaa842f613">
+<input checked="checked" id="4a2c3bad-1c5b-461b-8112-eba553021876" name="941b8652-0550-4ce1-b8a1-25950cad3a87" type="radio">
+</input><label class="sd-tab-label" for="4a2c3bad-1c5b-461b-8112-eba553021876">
 Question</label><div class="sd-tab-content docutils">
 <p>Based upon the above descriptions, which detectors seem most appropriate (generally!) for (a) widefield microscopy, (b) SDCM and (c) LSCM?</p>
 </div>
-<input id="9ad80b8a-3ab8-47dc-ab97-47d8162e9636" name="9261a88a-b6f5-430a-a648-af9dde15a3fa" type="radio">
-</input><label class="sd-tab-label" for="9ad80b8a-3ab8-47dc-ab97-47d8162e9636">
+<input id="2185d947-3fa6-4992-90fa-ce0ea0afab50" name="941b8652-0550-4ce1-b8a1-25950cad3a87" type="radio">
+</input><label class="sd-tab-label" for="2185d947-3fa6-4992-90fa-ce0ea0afab50">
 Answer</label><div class="sd-tab-content docutils">
 <p>The following are reasonable rules of thumb:</p>
 <ul class="simple">
@@ -1179,16 +1188,16 @@ This is because SDCM usually gives lower photon counts (certainly lower than in 
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="52e2c684-5ee5-486d-aa3d-a097245319c5" name="d96764de-fb9c-437a-aadb-8183cd768a2d" type="radio">
-</input><label class="sd-tab-label" for="52e2c684-5ee5-486d-aa3d-a097245319c5">
+<input checked="checked" id="68da677b-c95f-4a55-ab1a-ca5fc205c387" name="59174d93-aa78-45d4-867f-82c1353be268" type="radio">
+</input><label class="sd-tab-label" for="68da677b-c95f-4a55-ab1a-ca5fc205c387">
 Question</label><div class="sd-tab-content docutils">
 <p>Previously we explored how CCDs can use 2×2 binning to combine the electrons corresponding to multiple pixels together into a single pixel, which is then ‘less noisy’.
 A similar effect can be achieved by just acquiring an image without binning and applying a 2×2 filter, in which all the coefficients have values of one.
 Both techniques result in images that have roughly four times as many photons contributing to each pixel, and thus a better SNR.</p>
 <p>Think of one major advantage and one disadvantage of using filtering <em>after</em> acquisition, rather than binning <em>during</em> acquisition.</p>
 </div>
-<input id="646cb040-e436-45a4-94da-3394aa3bb7b1" name="d96764de-fb9c-437a-aadb-8183cd768a2d" type="radio">
-</input><label class="sd-tab-label" for="646cb040-e436-45a4-94da-3394aa3bb7b1">
+<input id="e1c5fdd9-8854-49c3-b0c0-279326c9eecd" name="59174d93-aa78-45d4-867f-82c1353be268" type="radio">
+</input><label class="sd-tab-label" for="e1c5fdd9-8854-49c3-b0c0-279326c9eecd">
 Answer</label><div class="sd-tab-content docutils">
 <p>A 2×2 binned image contains 1/4 the number of pixels of the original image.
 This represents a considerable loss of spatial information, and you would get a different result if you were to start binning at the first or second row or column, since different pixels would be combined in each case.

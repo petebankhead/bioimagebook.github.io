@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -49,6 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/2-processing/5-morph/morph.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ImageJ: Morphological operations" href="imagej.html" />
@@ -133,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -1319,15 +1328,15 @@ These components are then ‘flipped’ to become foreground pixels instead.</p>
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d4afb741-f936-43b1-829d-fb225f945295" name="de5cad69-16da-4139-89fb-745e050d89c5" type="radio">
-</input><label class="sd-tab-label" for="d4afb741-f936-43b1-829d-fb225f945295">
+<input checked="checked" id="aaeacb1e-c76d-4a54-afe6-2a7144580915" name="cf63ba06-82e3-41e1-bd6f-913731e6d9d7" type="radio">
+</input><label class="sd-tab-label" for="aaeacb1e-c76d-4a54-afe6-2a7144580915">
 Question</label><div class="sd-tab-content docutils">
 <p>We don’t always want to fill <em>all</em> the holes within a binary image, but rather only the smaller ones.
 Can you think of a way to fill <em>only holes smaller than 1000 px²</em>, using area opening?</p>
 <p>You’ll need at least one operation described in previous chapter.</p>
 </div>
-<input id="c01cbc17-01f9-4a29-bc92-853189e7cf09" name="de5cad69-16da-4139-89fb-745e050d89c5" type="radio">
-</input><label class="sd-tab-label" for="c01cbc17-01f9-4a29-bc92-853189e7cf09">
+<input id="4d0d8c32-4178-490b-96da-bde845c5be82" name="cf63ba06-82e3-41e1-bd6f-913731e6d9d7" type="radio">
+</input><label class="sd-tab-label" for="4d0d8c32-4178-490b-96da-bde845c5be82">
 Answer</label><div class="sd-tab-content docutils">
 <p>One way to fill holes below a fixed size:</p>
 <ul class="simple">

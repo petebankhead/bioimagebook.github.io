@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -51,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/2-processing/2-point_operations/point_operations.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ImageJ: Point operations" href="imagej.html" />
@@ -135,6 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -835,14 +844,14 @@ Examples include:</p>
 <p><strong>However</strong>, we need to keep in mind that we’re not dealing with abtract maths but rather bits and bytes.
 Which makes the next question particularly important.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5f7a760c-9ebd-4736-9a5c-d490ca56c2ba" name="296eab26-672b-4672-a0a6-4ff8c7742279" type="radio">
-</input><label class="sd-tab-label" for="5f7a760c-9ebd-4736-9a5c-d490ca56c2ba">
+<input checked="checked" id="9e20be4e-40f0-4e86-9be3-06855dbe88cf" name="1189ae17-f65a-49e0-be59-139857871ab7" type="radio">
+</input><label class="sd-tab-label" for="9e20be4e-40f0-4e86-9be3-06855dbe88cf">
 Question</label><div class="sd-tab-content docutils">
 <p>Suppose you add a constant to every pixel in the image.
 Why might subtracting the same constant from the result not give you back the image you started with?</p>
 </div>
-<input id="0dee9630-4207-415b-b60d-1e7a94ffd91c" name="296eab26-672b-4672-a0a6-4ff8c7742279" type="radio">
-</input><label class="sd-tab-label" for="0dee9630-4207-415b-b60d-1e7a94ffd91c">
+<input id="4a0f1ea4-aa97-4ad7-a91c-09fdf9630e2f" name="1189ae17-f65a-49e0-be59-139857871ab7" type="radio">
+</input><label class="sd-tab-label" for="4a0f1ea4-aa97-4ad7-a91c-09fdf9630e2f">
 Answer</label><div class="sd-tab-content docutils">
 <p>If you add a constant that pushes pixel values outside the range supported by the bit-depth (e.g. 0–255 for 8-bit), then the result cannot fit in the image.
 It’s likely to be clipped to the closest possible value instead.
@@ -1026,8 +1035,8 @@ Applications include:</p>
 </ul>
 <p>We will combine images in this way throughout the rest of the handbook.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2a000814-2e80-4460-b67f-7d300dbf22e2" name="fff1e1a7-79b9-4000-b851-341ca7b86191" type="radio">
-</input><label class="sd-tab-label" for="2a000814-2e80-4460-b67f-7d300dbf22e2">
+<input checked="checked" id="d9033343-0bc6-4079-adec-02f6a90bc061" name="5bdf4eaf-27fd-45a6-80b9-a0aaaa9a374d" type="radio">
+</input><label class="sd-tab-label" for="d9033343-0bc6-4079-adec-02f6a90bc061">
 Question</label><div class="sd-tab-content docutils">
 <p>In the two 32-bit images shown here, white pixels have values of one and black pixels have values of zero (gray pixels have values somewhere in between).</p>
 <figure class="align-center">
@@ -1038,8 +1047,8 @@ Question</label><div class="sd-tab-content docutils">
 <p>What would be the result of multiplying the images together?
 And what would be the result of dividing the left image by the right image?</p>
 </div>
-<input id="6822cde8-030c-4abd-babb-612cdc0dddb2" name="fff1e1a7-79b9-4000-b851-341ca7b86191" type="radio">
-</input><label class="sd-tab-label" for="6822cde8-030c-4abd-babb-612cdc0dddb2">
+<input id="e0e0dfe9-fd0a-4ff5-8873-6868c27f2eb6" name="5bdf4eaf-27fd-45a6-80b9-a0aaaa9a374d" type="radio">
+</input><label class="sd-tab-label" for="e0e0dfe9-fd0a-4ff5-8873-6868c27f2eb6">
 Answer</label><div class="sd-tab-content docutils">
 <p>Multiplying the images effectively results in everything outside the white region in the right image being removed from the left image (i.e. set to zero).</p>
 <figure class="align-center">

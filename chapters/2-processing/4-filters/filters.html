@@ -36,10 +36,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
@@ -51,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://bioimagebook.github.io/chapters/2-processing/4-filters/filters.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ImageJ: Filters" href="imagej.html" />
@@ -135,6 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../0-preamble/disclaimer.html">
    Disclaimer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   Changelog
   </a>
  </li>
 </ul>
@@ -1030,7 +1039,7 @@ The size of the filter is then defined in terms of a radius value (<a class="ref
 <figcaption>
 <p><span class="caption-number">Fig. 81 </span><span class="caption-text">The kernels used with several mean filters.
 Note that there’s no clearly ‘right’ way to approximate a circle within a pixel grid, and as a result different software can create circular filters that are slightly different.
-Here, (B) and (C) match the ‘circular’ filters used by ImageJ’s <span class="menuselection">Process ‣ Filters ‣ Mean…</span> command.</span><a class="headerlink" href="#fig-filter-shapes" title="Permalink to this image">#</a></p>
+Here, (B) and (C) match the ‘circular’ filters used by ImageJ’s <span class="menuselection notranslate">Process ‣ Filters ‣ Mean…</span> command.</span><a class="headerlink" href="#fig-filter-shapes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="info admonition">
@@ -1119,16 +1128,16 @@ If noise reduction is the primary goal, it’s therefore best to avoid unnecessa
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3eb8131a-6041-412d-b433-7f86600a935e" name="b5761df4-d319-4ba4-b9cc-8ebe1d966145" type="radio">
-</input><label class="sd-tab-label" for="3eb8131a-6041-412d-b433-7f86600a935e">
+<input checked="checked" id="e400a34b-df81-4974-a9b2-accfdd984b72" name="a8b71bf6-ce79-469f-a5bc-5fcb37b9e1d1" type="radio">
+</input><label class="sd-tab-label" for="e400a34b-df81-4974-a9b2-accfdd984b72">
 Question</label><div class="sd-tab-content docutils">
 <p>In ImageJ, creating a mean filter with <em>Radius = 6</em> results in a circular filter that replaces each pixel with the mean of 121 pixels.
 Using a square
 11×11 filter would also replace each pixel with the mean of 121 pixels.</p>
 <p>Can you think of any advantages in using the circular filter rather than the square filter?</p>
 </div>
-<input id="d9ac0031-55d9-42c9-a72f-d08dc2c41344" name="b5761df4-d319-4ba4-b9cc-8ebe1d966145" type="radio">
-</input><label class="sd-tab-label" for="d9ac0031-55d9-42c9-a72f-d08dc2c41344">
+<input id="c8da9464-d61d-4e2c-b3d7-676aa1c13a25" name="a8b71bf6-ce79-469f-a5bc-5fcb37b9e1d1" type="radio">
+</input><label class="sd-tab-label" for="c8da9464-d61d-4e2c-b3d7-676aa1c13a25">
 Answer</label><div class="sd-tab-content docutils">
 <p>Circles are more ‘compact’.
 Every point on the perimeter of a circle is the same distance from the center.
@@ -1192,14 +1201,14 @@ The gradient magnitude has high values around edges (regardless of their orienta
 <li><p>Take the square root of the result</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a8c03ad6-709a-488e-8f02-169dcbbb9e76" name="30f41e2a-d60d-4735-b5bd-247b7b7df93d" type="radio">
-</input><label class="sd-tab-label" for="a8c03ad6-709a-488e-8f02-169dcbbb9e76">
+<input checked="checked" id="b6e1465e-8c1d-4018-b350-343089f0969e" name="9a0cc452-ddf6-4ab4-84b1-dbe5e9650f1a" type="radio">
+</input><label class="sd-tab-label" for="b6e1465e-8c1d-4018-b350-343089f0969e">
 Question</label><div class="sd-tab-content docutils">
 <p>Suppose the mean pixel value of an image is 100.
 What will the mean value be after applying a horizontal gradient filter?</p>
 </div>
-<input id="a2a8cd4a-0628-40d7-8ae7-7efab2bae9d5" name="30f41e2a-d60d-4735-b5bd-247b7b7df93d" type="radio">
-</input><label class="sd-tab-label" for="a2a8cd4a-0628-40d7-8ae7-7efab2bae9d5">
+<input id="4f31b4b4-39a1-41ff-875f-f4d709b34c39" name="9a0cc452-ddf6-4ab4-84b1-dbe5e9650f1a" type="radio">
+</input><label class="sd-tab-label" for="4f31b4b4-39a1-41ff-875f-f4d709b34c39">
 Solution</label><div class="sd-tab-content docutils">
 <p>After applying a gradient filter, the image mean will be 0: every pixel is added once and subtracted once when calculating the result.</p>
 <p>(Note that the mean value of a <em>gradient magnitude</em> image will be ≥ 0, because all pixels have either positive values or are equal to zero.)</p>
@@ -1404,14 +1413,14 @@ They will become more important when we discuss <a class="reference internal" hr
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="49989a93-fb17-42b6-9d8d-6ec0280440a9" name="faa322d1-bce7-4659-bf57-730c9414cbfd" type="radio">
-</input><label class="sd-tab-label" for="49989a93-fb17-42b6-9d8d-6ec0280440a9">
+<input checked="checked" id="273a9cbf-866f-445f-a79f-d77298cdd4a4" name="4a1716d3-c3e7-4124-9031-0018da337c84" type="radio">
+</input><label class="sd-tab-label" for="273a9cbf-866f-445f-a79f-d77298cdd4a4">
 Question</label><div class="sd-tab-content docutils">
 <p>What would happen if you subtract a minimum filtered image (e.g.
 <a class="reference internal" href="#fig-processing-filters-rank"><span class="std std-numref">Fig. 87</span></a>C) from a maximum filtered image (Figure <a class="reference internal" href="#fig-processing-filters-rank"><span class="std std-numref">Fig. 87</span></a>B)?</p>
 </div>
-<input id="923b11dd-6b87-4060-b614-76382c3fc464" name="faa322d1-bce7-4659-bf57-730c9414cbfd" type="radio">
-</input><label class="sd-tab-label" for="923b11dd-6b87-4060-b614-76382c3fc464">
+<input id="4c329917-0161-49d8-8950-f7a729c52492" name="4a1716d3-c3e7-4124-9031-0018da337c84" type="radio">
+</input><label class="sd-tab-label" for="4c329917-0161-49d8-8950-f7a729c52492">
 Answer</label><div class="sd-tab-content docutils">
 <p>Subtracting a minimum from a maximum filtered image would be another way to accent the edges:</p>
 <figure class="align-center">
@@ -1952,7 +1961,7 @@ The technique is included here not as a recommendation that you use it, but rath
 This is something we almost never need to care about for two reasons:</p>
 <ol class="simple">
 <li><p>Convolution and correlation end up the same if the filter is symmetric – and most filters we care about are symmetric</p></li>
-<li><p>The distinction is often ignored in practice anyway. For example, ImageJ has a <span class="menuselection">Process ‣ Filters ‣ Convolve…</span> command that (last time I checked) actually implements correlation.</p></li>
+<li><p>The distinction is often ignored in practice anyway. For example, ImageJ has a <span class="menuselection notranslate">Process ‣ Filters ‣ Convolve…</span> command that (last time I checked) actually implements correlation.</p></li>
 </ol>
 </dd>
 <dt class="label" id="fn-3"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
