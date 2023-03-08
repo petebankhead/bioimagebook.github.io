@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
 <script defer data-domain="bioimagebook.github.io" src="https://plausible.io/js/plausible.js"></script>
+<meta name="google-site-verification" content="Aem87SvFh5w_cCS2z43mVgKmnIdYgMBOapUPZ_SQWVY" />
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -938,8 +939,8 @@ With a suitably colorful LUT (often <span class="menuselection notranslate">Imag
 </figcaption>
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9b753299-76ac-4301-bca4-80169866e892" name="f2777a2b-ab73-4f1c-a9b9-d95c9e61382d" type="radio">
-</input><label class="sd-tab-label" for="9b753299-76ac-4301-bca4-80169866e892">
+<input checked="checked" id="f8bee34c-b955-4197-90ed-23fc40d64d22" name="ebffed27-9e53-4a31-8354-fa4127d7ee0f" type="radio">
+</input><label class="sd-tab-label" for="f8bee34c-b955-4197-90ed-23fc40d64d22">
 Practical</label><div class="sd-tab-content docutils">
 <p><a class="reference internal" href="thresholding.html#sec-thresholds-connectivity"><span class="std std-ref">Connectivity</span></a> (4 or 8) is an important consideration when converting a binary image to objects, since it can have a major impact on the number and size of objects.</p>
 <p>Work out what kind of connectivity is used by</p>
@@ -951,8 +952,8 @@ Practical</label><div class="sd-tab-content docutils">
 One way to do this is by thresholding a suitable image, another is to use the <em>Brush tool</em> <img alt="../../../_images/brush.png" src="../../../_images/brush.png" /> to draw your own pixels in the binary image.</p>
 <p><a class="reference external" href="https://ij.imjoy.io/"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="b4f2271d-ca20-4794-9bd8-85c1809d91fd" name="f2777a2b-ab73-4f1c-a9b9-d95c9e61382d" type="radio">
-</input><label class="sd-tab-label" for="b4f2271d-ca20-4794-9bd8-85c1809d91fd">
+<input id="853d8019-2fe7-4eeb-8a08-cf6d3ef77de8" name="ebffed27-9e53-4a31-8354-fa4127d7ee0f" type="radio">
+</input><label class="sd-tab-label" for="853d8019-2fe7-4eeb-8a08-cf6d3ef77de8">
 Solution</label><div class="sd-tab-content docutils">
 <p>At the time of writing, <span class="menuselection notranslate">Analyze ‣ Analyze Particles…</span> uses 8-connectivity.</p>
 <p>For the <em>Wand tool</em> the right answer will depend upon the setting you see if you double-click the tool.
@@ -975,8 +976,8 @@ What these mean in each case is described at <a class="reference external" href=
 This should be done with some caution, since it can involve surreptitiously incorporating the <a class="reference internal" href="../../1-concepts/3-bit_depths/imagej.html#sec-bit-depths-converting"><span class="std std-ref">brightness &amp; contrast settings</span></a> into the thresholding.</p>
 <p>For these reasons, I tend to avoid local thresholding.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a6741b46-cfb4-4b45-945d-075b612ccc8c" name="5822492d-9a6b-4027-9fb3-963c01f77445" type="radio">
-</input><label class="sd-tab-label" for="a6741b46-cfb4-4b45-945d-075b612ccc8c">
+<input checked="checked" id="dcdb69a8-10b1-4f80-9b28-27d250825bc2" name="893a24bf-94d5-4e87-9921-9c330abae5ba" type="radio">
+</input><label class="sd-tab-label" for="dcdb69a8-10b1-4f80-9b28-27d250825bc2">
 Practical</label><div class="sd-tab-content docutils">
 <p>Explore several automated methods of thresholding the different channels of <span class="menuselection notranslate">File ‣ Open samples ‣ HeLa Cells</span>, using both local and global automated thresholds, to draw your own conclusions about which methods you might prefer for different images.</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?run=https://gist.github.com/petebankhead/a45e4eed3a90b6374ec7b272db090ec9"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
@@ -997,15 +998,15 @@ It is therefore used to mask out regions, while preserving meaningful pixel valu
 <p>This is an advanced option that is <em>potentially</em> useful, but can be a bit challenging to work with.
 You have to be extra cautious when using an image containing NaNs, since some commands might behave in surprising ways.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9bccfb48-80d2-4ecb-ae52-84c427f9450f" name="85231b2f-b43d-42d4-9d93-f92889526346" type="radio">
-</input><label class="sd-tab-label" for="9bccfb48-80d2-4ecb-ae52-84c427f9450f">
+<input checked="checked" id="9b47b0f0-a642-49f8-9b14-06e36db8d6d1" name="25d8dff4-06e9-4562-a337-71c28c387a98" type="radio">
+</input><label class="sd-tab-label" for="9b47b0f0-a642-49f8-9b14-06e36db8d6d1">
 Practical</label><div class="sd-tab-content docutils">
 <p>Create an image including NaN pixels, then measure some ROIs drawn on it.
 Are area measurements affected by whether NaNs are present or not?</p>
 <p><a class="reference external" href="https://ij.imjoy.io/"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="4d2cae85-ffbe-4619-bc69-57663c5dee95" name="85231b2f-b43d-42d4-9d93-f92889526346" type="radio">
-</input><label class="sd-tab-label" for="4d2cae85-ffbe-4619-bc69-57663c5dee95">
+<input id="981d372a-602f-46de-a6ec-ea9ced19231b" name="25d8dff4-06e9-4562-a337-71c28c387a98" type="radio">
+</input><label class="sd-tab-label" for="981d372a-602f-46de-a6ec-ea9ced19231b">
 Solution</label><div class="sd-tab-content docutils">
 <p>They are!
 If you measure the area of an image containing NaNs, the result is less than if you measure the area of the same image converted to 8-bit – since only the non-NaN parts are included.
@@ -1013,13 +1014,13 @@ If you measure a region containing NaNs only, the area is 0.</p>
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="fdf597b4-13cc-4180-8816-5a71031c7747" name="7c89dcc1-247c-4ed0-b4c9-1b0eb02f038e" type="radio">
-</input><label class="sd-tab-label" for="fdf597b4-13cc-4180-8816-5a71031c7747">
+<input checked="checked" id="51a3a0b5-1e24-421c-a8d0-e5162356e8d2" name="3c8dddfc-8d73-46e2-971a-f4fc9f38f9ef" type="radio">
+</input><label class="sd-tab-label" for="51a3a0b5-1e24-421c-a8d0-e5162356e8d2">
 Question</label><div class="sd-tab-content docutils">
 <p>Through experiment or guesswork, what do you suppose happens to NaNs with a 32-bit image is converted to 8-bit or 16-bit?</p>
 </div>
-<input id="0a386548-079f-478c-a19a-1aba72da05e6" name="7c89dcc1-247c-4ed0-b4c9-1b0eb02f038e" type="radio">
-</input><label class="sd-tab-label" for="0a386548-079f-478c-a19a-1aba72da05e6">
+<input id="e68be0f7-a403-46a7-9dac-8b25cc1b8e22" name="3c8dddfc-8d73-46e2-971a-f4fc9f38f9ef" type="radio">
+</input><label class="sd-tab-label" for="e68be0f7-a403-46a7-9dac-8b25cc1b8e22">
 Answer</label><div class="sd-tab-content docutils">
 <p>Since NaN is not an integer, it cannot be stored in an 8-bit or 16-bit unsigned integer image.
 Instead, all NaNs simply become zero.</p>
@@ -1043,8 +1044,8 @@ And what makes things worse is that ImageJ’s behavior in this regard has chang
 <p>I know I’m not alone in being confused, since this has been the subject of a <a class="reference external" href="https://forum.image.sc/t/auto-threshold-calculation-and-bright-and-contrast-auto-adjust-issue/19301">long discussion on the image.sc forum</a>.
 So the main message is: be aware that binning happens, and keep on the lookout for any unexpected effects that the brightness/contrast sliders might sneakily have on thresholding.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c60409f4-5a98-4d9c-82c5-0017fe315e2a" name="66e69e6e-c1ca-4040-8402-18700f913e9b" type="radio">
-</input><label class="sd-tab-label" for="c60409f4-5a98-4d9c-82c5-0017fe315e2a">
+<input checked="checked" id="8a5770e6-a250-4a73-9cce-73a7a59e8ad4" name="2e74b0c8-d08f-45ca-8bd7-98a23f9abc8c" type="radio">
+</input><label class="sd-tab-label" for="8a5770e6-a250-4a73-9cce-73a7a59e8ad4">
 Practical</label><div class="sd-tab-content docutils">
 <p>Explore setting thresholds with and without <span class="guilabel notranslate">Don’t reset range</span> selected for the image <span class="menuselection notranslate">File ‣ Open Samples ‣ M51 Galaxy (16-bits)</span>, and pressing the <span class="guilabel notranslate">Auto</span> button to determine a threshold.</p>
 <p>Keep <span class="menuselection notranslate">Image ‣ Adjust ‣ Brightness/Contrast…</span> open as you explore, so you can make adjustments before calculating the thresholds.</p>
@@ -1053,8 +1054,8 @@ Practical</label><div class="sd-tab-content docutils">
 </figure>
 <p><a class="reference external" href="https://ij.imjoy.io/?run=https://gist.github.com/petebankhead/c5d2075777c458c70c69a1f2c8b37391"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="5f2300c4-0ee4-4157-a6df-e6ab68298a8e" name="66e69e6e-c1ca-4040-8402-18700f913e9b" type="radio">
-</input><label class="sd-tab-label" for="5f2300c4-0ee4-4157-a6df-e6ab68298a8e">
+<input id="fc12b9c8-252f-4018-a194-6419ce284081" name="2e74b0c8-d08f-45ca-8bd7-98a23f9abc8c" type="radio">
+</input><label class="sd-tab-label" for="fc12b9c8-252f-4018-a194-6419ce284081">
 Solution</label><div class="sd-tab-content docutils">
 <p>This image shows a potential use of the <span class="guilabel notranslate">Don’t reset range</span> option – used cautiously.</p>
 <figure class="align-center" id="id4">
@@ -1068,8 +1069,8 @@ Solution</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c0c73977-388e-4cf8-80fd-230397fa5f6a" name="d3edc840-ab80-4342-9716-42cf27d05b1e" type="radio">
-</input><label class="sd-tab-label" for="c0c73977-388e-4cf8-80fd-230397fa5f6a">
+<input checked="checked" id="435e0433-a83b-4ade-83a5-97aa5763ebb0" name="96c1d3b2-2c22-4f5e-af07-640f49c38768" type="radio">
+</input><label class="sd-tab-label" for="435e0433-a83b-4ade-83a5-97aa5763ebb0">
 Practical</label><div class="sd-tab-content docutils">
 <p>What are the implications of using a 256-bin histogram for thresholding a 32-bit image?</p>
 <p>In particular, how might any outlier pixels affect the accuracy with which you can define a threshold – automatically or manually?</p>
@@ -1078,8 +1079,8 @@ Practical</label><div class="sd-tab-content docutils">
 <p><strong>Note:</strong> <span class="menuselection notranslate">Analyze ‣ Histogram</span> lets you investigate the image histogram with different numbers of bins – but any changes you make here will not be reflected in the histogram actually used for thresholding.</p>
 <p><a class="reference external" href="https://ij.imjoy.io?open=https://github.com/bioimagebook/practical-data/blob/main/images/cell_outlier.tif"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/launch-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="1efd025c-d2a5-4013-83fa-d6699521a9f7" name="d3edc840-ab80-4342-9716-42cf27d05b1e" type="radio">
-</input><label class="sd-tab-label" for="1efd025c-d2a5-4013-83fa-d6699521a9f7">
+<input id="11fc9017-b987-450d-97bf-6fc063969116" name="96c1d3b2-2c22-4f5e-af07-640f49c38768" type="radio">
+</input><label class="sd-tab-label" for="11fc9017-b987-450d-97bf-6fc063969116">
 Solution</label><div class="sd-tab-content docutils">
 <p>First, a positive implication of using a 256-bit histogram for thresholding is that it can be fast: more bins add to the computations involved.
 Also, creating too many bins has the result of making most of them zero – potentially causing some automated threshold-determination algorithms to fail.</p>

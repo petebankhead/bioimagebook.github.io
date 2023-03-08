@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
 <script defer data-domain="bioimagebook.github.io" src="https://plausible.io/js/plausible.js"></script>
+<meta name="google-site-verification" content="Aem87SvFh5w_cCS2z43mVgKmnIdYgMBOapUPZ_SQWVY" />
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -864,14 +865,14 @@ This can take some careful inspection to distinguish from the black border that 
 <p>If you know the bit-depth and type of the image, you can figure out the range (e.g. 0-255 for an 8-bit unsigned integer image, 0-65,535 for 16-bit) and usually that gives a good indication to where the peaks would be – but it isn’t a perfect guide.
 Conceivably, we could have an image that was clipped at some other value because it has been rescaled <em>after</em> clipping.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a176b524-a89a-4171-aff6-f2fcd4a05376" name="786982c0-32a3-4bb8-a463-b13f08bb8da5" type="radio">
-</input><label class="sd-tab-label" for="a176b524-a89a-4171-aff6-f2fcd4a05376">
+<input checked="checked" id="2665a90b-ec06-454b-b47c-6befd47d638a" name="b3cf64fc-1182-49f9-a7a6-e36f2d0b0637" type="radio">
+</input><label class="sd-tab-label" for="2665a90b-ec06-454b-b47c-6befd47d638a">
 Question</label><div class="sd-tab-content docutils">
 <p>Does the image below show signs of having been clipped?</p>
 <a class="reference internal image-reference" href="../../../_images/imagej-histogram-maybe.png"><img alt="../../../_images/imagej-histogram-maybe.png" class="align-center" src="../../../_images/imagej-histogram-maybe.png" style="width: 60%;" /></a>
 </div>
-<input id="cef296b3-c466-47ed-a172-a9d9871c3e91" name="786982c0-32a3-4bb8-a463-b13f08bb8da5" type="radio">
-</input><label class="sd-tab-label" for="cef296b3-c466-47ed-a172-a9d9871c3e91">
+<input id="69bdb5a3-be16-4b55-8434-dc959daa5a03" name="b3cf64fc-1182-49f9-a7a6-e36f2d0b0637" type="radio">
+</input><label class="sd-tab-label" for="69bdb5a3-be16-4b55-8434-dc959daa5a03">
 Answer</label><div class="sd-tab-content docutils">
 <p>Yes!
 There is a small peak at the high end of the histogram, corresponding to pixel values of 4095.
@@ -952,15 +953,15 @@ Fortunately, there is an easy way to achieve this:</p>
 <p>If you <strong>really</strong> need to reduce the bit-depth of an image in ImageJ, you should usually open <span class="menuselection notranslate">Image ‣ Adjust ‣ Brightness/Contrast…</span> (<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">C</kbd></kbd>) and press the <span class="guilabel notranslate">Reset</span> button first, to minimize the data lost to clipping or rounding.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a3865376-905d-4f1f-b0f6-d69d94c3c45c" name="e2cd85a7-6c73-4904-9583-a8eac7936bfc" type="radio">
-</input><label class="sd-tab-label" for="a3865376-905d-4f1f-b0f6-d69d94c3c45c">
+<input checked="checked" id="9fdbe6eb-7b16-4d5d-ba02-d73a39bcad23" name="58ca17b3-8e8e-4343-b243-beea24078de6" type="radio">
+</input><label class="sd-tab-label" for="9fdbe6eb-7b16-4d5d-ba02-d73a39bcad23">
 Question</label><div class="sd-tab-content docutils">
 <p>Why is scaling usually a good thing when reducing the bit-depth, and why is a constant usually subtracted before applying this scaling?</p>
 <p><strong>Hint:</strong> As an example, consider how a 16-bit image containing values in the range 4000–5000 might be converted to 8-bit first without scaling, and then alternatively by scaling with or without the initial constant subtraction.
 What constants for subtraction and division would usually minimize the amount of information lost when converting to 8-bit image, limiting the errors to rounding only and not clipping?</p>
 </div>
-<input id="042efe08-a00f-48c1-99d5-253bb020fe79" name="e2cd85a7-6c73-4904-9583-a8eac7936bfc" type="radio">
-</input><label class="sd-tab-label" for="042efe08-a00f-48c1-99d5-253bb020fe79">
+<input id="d6358603-4924-4cd8-92df-68e7d5b5af5b" name="58ca17b3-8e8e-4343-b243-beea24078de6" type="radio">
+</input><label class="sd-tab-label" for="d6358603-4924-4cd8-92df-68e7d5b5af5b">
 Answer</label><div class="sd-tab-content docutils">
 <p>In the example given, converting to 8-bit without any scaling would result in all pixels simply becoming 255: all useful information in the image would be lost.</p>
 <p>With scaling but without subtraction, it would make sense to divide all pixel values by the maximum in the image divided by the maximum in the new bit depth, i.e. by 5000/255.
@@ -969,16 +970,16 @@ This would then lead to an image in which pixels fall into the range 204–255. 
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="00833c00-8a84-4464-adde-97d19b3aa94e" name="b94b047e-b178-4a1e-9ceb-9789132dbff8" type="radio">
-</input><label class="sd-tab-label" for="00833c00-8a84-4464-adde-97d19b3aa94e">
+<input checked="checked" id="e1e1238f-50b1-4d34-947c-cc61c4d84ec1" name="db624440-cae4-4635-9a37-f0d6ee4cad41" type="radio">
+</input><label class="sd-tab-label" for="e1e1238f-50b1-4d34-947c-cc61c4d84ec1">
 Practical</label><div class="sd-tab-content docutils">
 <p>Make sure that the <span class="guilabel notranslate">Scale When Converting</span> option is turned on (it should be by default).
 Then using a suitable 8-bit sample image, e.g. <span class="menuselection notranslate">File ‣ Open Samples ‣ Boats</span>, explore the effects of brightness/contrast settings when increasing or decreasing bit-depths.</p>
 <p>Can you destroy the image by simply 1) increasing the bit-depth, and the then 2) decreasing the bit-depth to its original value?</p>
 <p><a class="reference external" href="https://ij.imjoy.io/?run=https://gist.github.com/petebankhead/6f9f451fdc0116197501ae504a57d5e7"><img alt="launch ImageJ.JS" src="https://ij.imjoy.io/assets/badge/open-in-imagej-js-badge.svg" /></a></p>
 </div>
-<input id="f55827c8-74fe-4566-8b01-796af7b2a1af" name="b94b047e-b178-4a1e-9ceb-9789132dbff8" type="radio">
-</input><label class="sd-tab-label" for="f55827c8-74fe-4566-8b01-796af7b2a1af">
+<input id="559862e4-4052-4372-a5b3-82ad4e10cc12" name="db624440-cae4-4635-9a37-f0d6ee4cad41" type="radio">
+</input><label class="sd-tab-label" for="559862e4-4052-4372-a5b3-82ad4e10cc12">
 Solution</label><div class="sd-tab-content docutils">
 <p>It’s generally a good idea to choose <span class="guilabel notranslate">Reset</span> in the <span class="menuselection notranslate">Brightness/Contrast…</span> window before reducing any bit-depths for 2D images (see <a class="reference internal" href="../../2-processing/7-multidimensional_processing/multidimensional_processing.html#chap-multidimensional-processing"><span class="std std-ref">Multidimensional processing</span></a> to read about special considerations related to <em>z</em>-stacks or time series).</p>
 <p>You can destroy an image by increasing its bit-depth, adjusting the brightness/contrast and then decreasing the bit-depth to the original one again.

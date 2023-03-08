@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
 <script defer data-domain="bioimagebook.github.io" src="https://plausible.io/js/plausible.js"></script>
+<meta name="google-site-verification" content="Aem87SvFh5w_cCS2z43mVgKmnIdYgMBOapUPZ_SQWVY" />
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -842,14 +843,14 @@ Optimizing the display for a single slice does not necessarily mean the rest of 
 You can also specify the percentage of pixels that should be saturated (clipped) <em>for display</em>, i.e. those that should be shown with the first or last colors in the LUT.
 So long as <span class="guilabel notranslate">Normalize</span> and <span class="guilabel notranslate">Equalize histogram</span> are not selected, the pixel values shouldn’t be changed.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6d7bf4e9-6975-46d5-95ce-bcc84f280bae" name="ac2cb295-f2f6-491a-9450-ff249efc8496" type="radio">
-</input><label class="sd-tab-label" for="6d7bf4e9-6975-46d5-95ce-bcc84f280bae">
+<input checked="checked" id="89e9b5b8-4d38-4d74-8f39-99154a09a570" name="116abe3d-8222-4570-890c-307c9df5b5a9" type="radio">
+</input><label class="sd-tab-label" for="89e9b5b8-4d38-4d74-8f39-99154a09a570">
 Question</label><div class="sd-tab-content docutils">
 <p>By default, the percentage of saturated pixels in <span class="menuselection notranslate">Enhance Contrast…</span> is set to 0.4.
 Why might this be chosen instead of 0?</p>
 </div>
-<input id="04dd89fe-a4ad-4497-904e-d252c598dfe3" name="ac2cb295-f2f6-491a-9450-ff249efc8496" type="radio">
-</input><label class="sd-tab-label" for="04dd89fe-a4ad-4497-904e-d252c598dfe3">
+<input id="9513a01f-2deb-4174-8508-711f53a9f448" name="116abe3d-8222-4570-890c-307c9df5b5a9" type="radio">
+</input><label class="sd-tab-label" for="9513a01f-2deb-4174-8508-711f53a9f448">
 Answer</label><div class="sd-tab-content docutils">
 <p>If the percentage of saturated pixels is 0, then the minimum and maximum pixel values throughout the image will be given the first and last LUT colors respectively, with all other colors devoted to values in between.
 This is sensitive to outliers, and often results in images that have poor contrast.
@@ -897,8 +898,8 @@ Elsewhere (e.g. <span class="menuselection notranslate">Gaussian Blur 3D…</spa
 <p>When thresholding an image with more than 2 dimensions using the <span class="menuselection notranslate">Threshold…</span> command, it is necessary to choose whether the threshold should be determined from the histogram of the entire stack, or from the currently-visible 2D slice only.
 If the latter, you will also be asked whether the same threshold should be used for every slice, or if it should be calculated anew for each slice based upon the slice histogram. In some circumstances, these choices can have a very large impact upon the result.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e8ead5ed-8225-44b7-913b-8ecea7fd92dc" name="6d708ddc-cc4c-4bc0-b2e8-742b862c0d68" type="radio">
-</input><label class="sd-tab-label" for="e8ead5ed-8225-44b7-913b-8ecea7fd92dc">
+<input checked="checked" id="8c0c2c07-9625-47f7-937b-29da69806764" name="478a0e41-297e-4464-91b8-a0498b256e07" type="radio">
+</input><label class="sd-tab-label" for="8c0c2c07-9625-47f7-937b-29da69806764">
 Question</label><div class="sd-tab-content docutils">
 <p>When you threshold a stack, you have an option to choose <span class="guilabel notranslate">Stack Histogram</span>. Then, when you choose <span class="guilabel notranslate">Apply</span> you are asked if you want to <span class="guilabel notranslate">Calculate Threshold for Each Image</span>.
 What difference do you expect these two options to make, and what combinations would you use for:</p>
@@ -911,8 +912,8 @@ What difference do you expect these two options to make, and what combinations w
 You will have to split the channels for this because ImageJ currently refuses to threshold multichannel images with extra dimensions (which helps avoid some confusion).
 <span class="guilabel notranslate">Dark Background</span> should always be selected here.</p>
 </div>
-<input id="e494b8ee-e323-4581-b4f3-bae9af65ab09" name="6d708ddc-cc4c-4bc0-b2e8-742b862c0d68" type="radio">
-</input><label class="sd-tab-label" for="e494b8ee-e323-4581-b4f3-bae9af65ab09">
+<input id="ebbf2df9-3ccd-49d0-9c6a-f1143469cfff" name="478a0e41-297e-4464-91b8-a0498b256e07" type="radio">
+</input><label class="sd-tab-label" for="ebbf2df9-3ccd-49d0-9c6a-f1143469cfff">
 Answer</label><div class="sd-tab-content docutils">
 <p>If <span class="guilabel notranslate">Stack Histogram</span> is checked, the thresholds are computed from a histogram of all the pixels in the entire image stack; otherwise, the histogram of only the currently-displayed image slice is used.</p>
 <p>BUT! If <span class="guilabel notranslate">Calculate Threshold for Each Image</span> is chosen, then this is ignored: the threshold is always determined by the selected automatic method using the histogram of the corresponding slice only.</p>
@@ -955,8 +956,8 @@ However, if single measurements should be made for individual objects that exten
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="03fa9812-df8d-465c-b565-9aa5c193b513" name="b3085272-a600-496d-b07e-c10a523f6935" type="radio">
-</input><label class="sd-tab-label" for="03fa9812-df8d-465c-b565-9aa5c193b513">
+<input checked="checked" id="b75818b4-dc58-4f22-a61c-183c8f325e82" name="eb204784-34c4-4ef1-b0c4-fb45517263b4" type="radio">
+</input><label class="sd-tab-label" for="b75818b4-dc58-4f22-a61c-183c8f325e82">
 Practical</label><div class="sd-tab-content docutils">
 <p>Suppose you have a cell, nucleus or some other large 3D structure in a <strong>z</strong>-stack, and you want to draw the smallest 2D ROI that completely contains it on every slice.
 An example is shown below for the green structure in the <span class="menuselection notranslate">Confocal Series</span> sample image.</p>
@@ -968,8 +969,8 @@ An example is shown below for the green structure in the <span class="menuselect
 </div>
 </figure>
 </div>
-<input id="cc8f9252-42d1-4b4b-ac40-ffc53e38ed62" name="b3085272-a600-496d-b07e-c10a523f6935" type="radio">
-</input><label class="sd-tab-label" for="cc8f9252-42d1-4b4b-ac40-ffc53e38ed62">
+<input id="70fc5bdd-ae24-4855-83e9-a3a9d2b380e7" name="eb204784-34c4-4ef1-b0c4-fb45517263b4" type="radio">
+</input><label class="sd-tab-label" for="70fc5bdd-ae24-4855-83e9-a3a9d2b380e7">
 Solution</label><div class="sd-tab-content docutils">
 <p>My strategy would be to create a z-projection (max intensity) and then draw the ROI on this – or, preferably, create the ROI by thresholding using <span class="menuselection notranslate">Image ‣ Adjust ‣ Threshold</span> and the <span class="guilabel notranslate">Wand</span> tool.
 This ROI can then be transferred over to the original stack, either via the ROI Manager or <span class="menuselection notranslate">Edit ‣ Selection ‣ Restore Selection</span>.</p>
@@ -985,14 +986,14 @@ Rather, under <span class="menuselection notranslate">Analyze ‣ Set Measuremen
 Then when you compute the stack histogram (or press <span class="menuselection notranslate">Measure</span> for 2D) only above-threshold pixels will be included in the statistics.
 Just be sure to reset <span class="guilabel notranslate">Limit to threshold</span> later.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="72f9612f-e0a4-4f38-b02f-d231bdb30973" name="941f3b40-5978-4b90-93dc-f6b815cae1f6" type="radio">
-</input><label class="sd-tab-label" for="72f9612f-e0a4-4f38-b02f-d231bdb30973">
+<input checked="checked" id="52460c69-0385-40ca-9581-558bcb5f0feb" name="c312bb79-3a9d-4be5-a926-29e2514cbd19" type="radio">
+</input><label class="sd-tab-label" for="52460c69-0385-40ca-9581-558bcb5f0feb">
 Question</label><div class="sd-tab-content docutils">
 <p>How can you translate the total number of pixels in an object into its volume, e.g.
 in µm<sup>3</sup>? Give some thought to how accurate your method will be.</p>
 </div>
-<input id="07681870-ffb1-46dd-bd4e-90395cfd438b" name="941f3b40-5978-4b90-93dc-f6b815cae1f6" type="radio">
-</input><label class="sd-tab-label" for="07681870-ffb1-46dd-bd4e-90395cfd438b">
+<input id="5c59036f-6310-42dd-a2ee-eddfa7558ae8" name="c312bb79-3a9d-4be5-a926-29e2514cbd19" type="radio">
+</input><label class="sd-tab-label" for="5c59036f-6310-42dd-a2ee-eddfa7558ae8">
 Answer</label><div class="sd-tab-content docutils">
 <p>You could treat each pixel as a rectangular cuboid, with a volume equal to <em>pixel width_×_pixel height_×_voxel depth</em> (as given in <span class="menuselection notranslate">Image ‣ Properties…</span>).
 Then multiply this by the number of pixels within the object.
